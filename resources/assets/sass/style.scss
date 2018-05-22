@@ -1,0 +1,641 @@
+
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,600");
+
+// Variables
+@import "variables";
+
+
+a {
+  margin: 0 2%;
+}
+
+p {
+  margin: 0;
+  
+}
+
+body {
+  background-color: rgb(240, 245, 245);
+  overflow-x: hidden;
+  // overflow-y: hidden;
+}
+
+
+@media (max-width: 1000px) {
+
+  .launch {
+    overflow-x: hidden;
+    height: 100%;
+    width: 2000px;
+
+    align-content: center;
+  }
+
+  .launch img {
+    height: 100%;
+    width: 2000px;
+  }
+}
+
+
+
+.navbar {
+  font-family: 'Roboto';
+  padding: 1rem;
+
+  margin: 0 0 10% 0;
+}
+
+.navbar-brand {
+  font-size: 1.2em !important;
+  font-weight: lighter;
+  // color: $green-color !important;
+
+  width: 50px;
+}
+
+.navbar-nav li {
+  padding-right: 30px;
+}
+
+.nav-link {
+  font-size: 1.1em !important;
+  color: $green-color;
+}
+
+.link-font {
+  font-family: 'Roboto' !important;
+  font-weight: lighter;
+}
+
+.chute-logo img {
+  width: 50px;
+}
+
+.chute-logo-large {
+  margin: 17% 0 0 1%;
+  padding: 0;
+  width: 400px !important;
+}
+
+.watch-video {
+  margin: 0 !important;
+
+  display: flex;
+  justify-content: center;
+}
+
+.chute-video {
+  width: 120px;
+  margin: 15% 0 0 0;
+
+  background-color: rgba(0, 0, 0, 0) !important;
+  border: 1px solid white !important;
+  color: white !important;
+
+  font-family: 'Roboto';
+}
+
+.chute-video:hover {
+  background-color: white !important;
+  border: 1px solid white !important;
+  color: rgb(70, 70, 80) !important;
+}
+
+
+
+
+.see-through {
+  background-color: rgba(0,0,0,0) !important;
+}
+
+
+.launch {
+  position: relative;
+
+  z-index: 0;;
+}
+
+
+// .launc img {
+//   width: 100%;
+// }
+
+.caption {
+  position: absolute;
+
+  width: 100%;
+  margin: -50% 0 0 0;
+
+  font-family: 'Anton';
+}
+
+.caption h1 {
+
+  color: white;
+}
+
+
+
+
+
+.title {
+  text-align: center;
+
+  width: 60%;
+  margin: 2% 0 8% 20%;
+
+  color: rgb(150, 150, 150);
+  font-family: 'Montserrat' !important;
+  font-weight: lighter;
+  font-size: 1.2vw !important;
+  line-height: 40px;
+}
+
+.chute-youtube {
+  width: 70% !important;
+  // height: auto !important;
+
+  margin: 0 0 15% 15%;
+}
+
+
+.chute-desc-col {
+  margin: 10% 0 0 0;
+}
+
+.chute-desc-title {
+  text-align: center;
+
+  font-family: 'Anton' !important;
+  font-size: 1.4em;
+  color: rgb(70, 70, 80);
+
+  margin: 15% 0 3% 0;
+
+}
+
+.chute-icon {
+  width: 10%;
+  margin: 0 0 0 45%;
+}
+
+.chute-desc {
+  text-align: center;
+
+  margin: 1% 0 0 10%;
+  width: 80%;
+
+  font-size: 1.2em;
+  font-weight: lighter;
+  color: rgb(130, 130, 135);
+}
+
+
+.page-button {
+  width: 40%;
+  margin: 10% 0 0 30%;
+
+  background-color: $green-color;
+  border: 1px solid $green-color;
+}
+
+
+
+.footer {
+  background-color: rgb(100, 120, 100);
+  color: white;
+}
+
+.footer p {
+  margin: 2.5%;
+}
+
+
+
+// Option 2
+
+
+.video-full-width {
+  min-width: 100%;
+}
+
+
+
+
+.navbar {
+  // font-family: 'Slabo 27px';
+  font-family: 'Roboto';
+  padding: 1rem;
+
+  margin: 0 0 10% 0;
+}
+
+.navbar-brand {
+  font-size: 1.2em !important;
+  font-weight: lighter;
+  // color: $green-color !important;
+}
+
+.navbar-nav li {
+  padding-right: 30px;
+}
+
+.nav-link {
+  font-size: 1.1em !important;
+  color: $green-color;
+}
+
+.link-font {
+  // font-family: 'Slabo 27px' !important;
+}
+
+.chute-video {
+  width: 120px;
+  margin: 15% 0 0 0;
+
+  background-color: rgba(0, 0, 0, 0) !important;
+  border: 1px solid white !important;
+  color: white !important;
+
+  font-family: 'Roboto';
+}
+
+.chute-video:hover {
+  background-color: white !important;
+  border: 1px solid white !important;
+  color: rgb(70, 70, 80) !important;
+}
+
+
+.icon-sections {
+  padding: 0 6%;
+}
+
+.see-through {
+  background-color: rgba(0,0,0,0) !important;
+}
+
+
+.launch {
+  position: relative;
+
+  z-index: 0;;
+}
+
+.site-background {
+  width: 100% !important;
+}
+
+.caption {
+  position: absolute;
+
+  width: 100%;
+  margin: -50% 0 0 0;
+
+  font-family: 'Anton';
+}
+
+.caption h1 {
+
+  color: white;
+}
+
+
+
+
+.opener {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  // padding: 4%;
+
+  background-color: white;
+
+  z-index: 1;
+}
+
+.opener h1 {
+  color: white;
+}
+
+.green-header {
+  background-color: $green-color;
+
+  margin: -3% 0 3% 0;
+  padding: 3% 0 .5% 0;
+
+
+  font-family: 'Source Sans Pro';
+}
+
+.dark-green-header {
+  background-color: rgb(65, 90, 75);
+
+  margin: -3% 0 3% 0;
+  padding: 3% 0 .5% 0;
+
+
+  font-family: 'Source Sans Pro';
+}
+
+.dark-green-header h1 {
+  color: $green-color;
+}
+
+.dark-green-header h3 {
+  color: white;
+}
+
+.green-header h1 {
+
+}
+
+.green-header  h3{
+  background-color: $green-color;
+  color: white;
+
+  margin: 0 0 3% 15%;
+  padding: 1% 3% .5% 3%;
+
+  width: 70%;
+
+  border-radius: 5px;
+
+  font-family: 'Roboto' !important;
+  font-weight: lighter !important;
+}
+
+
+.chute-youtube {
+  width: 70% !important;
+  // height: auto !important;
+
+  margin: 0 0 15% 15%;
+}
+
+.video-title {
+  margin: 4% 0 0 0;
+  padding: 2% 8%;
+
+  height: 15%;
+}
+
+.video-title h1 {
+  color: rgb(80, 80, 90);
+  font-family: 'Anton' !important;
+  font-weight: lighter;
+  font-size: 40px;
+
+  margin: 0 0 4% 0;
+}
+
+.video-title h2 {
+  margin: 2% 0 1% 0;
+  color: rgb(160, 200, 185);
+  font-weight: bold;
+  font-size: 17px;
+}
+
+.video-title p {
+  color: rgb(170, 170, 180);
+  font-weight: lighter;
+  font-size: 18px;
+  font-family: 'Montserrat' !important;
+
+  margin: 1% 0 4% 0;
+  line-height: 25px;
+}
+
+.video-title a {
+  color: rgb(70, 70, 80);
+  font-weight: bold;
+  font-size: 14px;
+
+  margin: 40% 0 0 0;
+  line-height: 30px;
+}
+
+.chute-desc-col {
+  margin: 0;
+}
+
+.chute-desc-title {
+  text-align: center;
+
+  font-family: 'Arvo';
+  font-size: 1.4em;
+  color: rgb(70, 70, 80);
+
+  margin: 10% 0 3% 0;
+
+}
+
+.chute-icon {
+  width: 10%;
+  margin: 18% 0 0 45%;
+}
+
+.icons {
+  margin: 0 0 15% 0;
+}
+
+.chute-desc {
+  text-align: center;
+
+  margin: 1% 0 0 10%;
+  width: 80%;
+
+  font-size: 1.2em;
+  font-weight: lighter;
+  color: rgb(130, 130, 135);
+}
+
+
+.page-button {
+  width: 40%;
+  margin: 15% 0 0 30%;
+
+  background-color: $green-color;
+  border: 1px solid $green-color;
+}
+
+.page-button:hover {
+  width: 40%;
+  margin: 15% 0 0 30%;
+
+  background-color: rgb(150, 190, 160);
+  border: 1px solid rgb(150, 190, 160);
+}
+
+
+
+.footer {
+  background-color: $green-color;
+  color: white;
+}
+
+.footer p {
+  margin: 2.5%;
+}
+
+
+
+// Option 2
+
+
+.video-full-width {
+  min-width: 100%;
+}
+
+.caption-two {
+  position: absolute;
+
+  width: 100%;
+  height: 200%;
+  margin: -70% 0 0 0;
+
+  font-family: 'Anton';
+
+  background-color: rgba(0, 0, 0, .1);
+}
+
+.caption-two h1 {
+  margin: 30% 0 0 0;
+  color: white;
+}
+
+.chute-video-two {
+  width: 120px;
+  margin: 8% 0 0 0;
+
+  background-color: rgba(0, 0, 0, 0) !important;
+  border: 1px solid white !important;
+  color: white !important;
+
+  font-family: 'Roboto';
+}
+
+.chute-video-two:hover {
+  background-color: white !important;
+  border: 1px solid white !important;
+  color: rgb(70, 70, 80) !important;
+}
+
+
+
+// Option 3
+
+
+
+.caption-three {
+  position: absolute;
+
+  width: 100%;
+  height: 120%;
+  margin: -70% 0 0 0;
+
+  
+
+  background-color: rgba(0, 0, 0, .1);
+}
+
+.caption-three h1 {
+  margin: 0 0 3% 0;
+  color: white;
+
+  font-size: 70px;
+  // font-family: 'Anton';
+  font-family: 'Slabo 27px';
+}
+
+.caption-three p {
+  margin: 0 0 0 0;
+  width: 93%;
+
+  color: white;
+
+  font-size: 15px;
+
+}
+
+// .third-video {
+//   margin: 10% 5% 0 0;
+// }
+
+.third-header {
+  padding: 12% 0 0 0;
+  margin: 10% 0 0 0;
+}
+
+.third-store {
+  margin: 6% 0 0 0;
+  padding: 1.5% 5%;
+
+  background-color: $green-color;
+  border: 1px solid $green-color;
+
+  color: white;
+
+  font-size: 18px;
+}
+
+
+
+
+// Secondary Proucts //
+
+.secondary-products {
+  margin: 0;
+  padding: 4% 2% 4% 2%;
+
+  background: $green-color;
+}
+
+.product-wrapper {
+  // padding: 0 3% !important;
+}
+
+.secondary-product {
+  // margin: 0 20% !important;
+  // background: rgb(240, 240, 240);
+
+  border: none !important;
+  box-shadow: 7px 7px 12px rgba(0, 0, 0, .1);
+}
+
+.card-body {
+  padding: 9% 9% 0 9%;
+  height: 250px !important;
+  font-size: 30px !important;
+  font-family: 'Anton' !important;
+  color: rgb(80, 80, 90);
+  letter-spacing: 2px;
+}
+
+.card-text {
+  margin: 8% 0 0 0;
+  color: rgb(140, 140, 140) !important;
+  font-family: 'Roboto' !important;
+  font-size: 14px !important;
+  letter-spacing: 0px;
+}
+
+.card-desc {
+  height: 160px;
+}
+
+
+.green-store-button {
+  border: 1px solid green;
+  background: green;
+
+  width: 100px !important;
+}
+
+.green-store-button:hover {
+  border: 1px solid rgb(80, 166, 100);
+  background: rgb(80, 166, 100);
+}
