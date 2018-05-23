@@ -22,6 +22,9 @@ class SiteController extends Controller
 
     public function contact()
     {
-        return view('contact');
+        $page = Page::where('title', 'contact')->first();
+        return view('contact', [
+            'page' => $page
+        ]);
     }
 }

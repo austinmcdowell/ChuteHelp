@@ -22,7 +22,10 @@ class AdminController extends Controller
 
     public function contact()
     {
-        return view('admin.contact');
+        $page = Page::where('title', 'contact')->first();
+        return view('admin.contact', [
+            'page' => $page
+        ]);
     }
 
     public function save(Request $request)

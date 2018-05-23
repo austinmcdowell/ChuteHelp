@@ -317,7 +317,7 @@
                 Object.assign(payload.data, this.$data);
 
                 axios.post('/admin/save', payload).then(response => {
-                    //window.location.reload(true);
+                    window.location.reload(true);
                 }).catch(e => {
                     alert('There was an error. Please contact support.');
                 });

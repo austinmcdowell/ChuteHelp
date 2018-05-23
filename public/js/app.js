@@ -45945,7 +45945,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             Object.assign(payload.data, this.$data);
 
             axios.post('/admin/save', payload).then(function (response) {
-                //window.location.reload(true);
+                window.location.reload(true);
             }).catch(function (e) {
                 alert('There was an error. Please contact support.');
             });
@@ -46916,15 +46916,64 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     mounted: function mounted() {
-        console.log('Component mounted.');
+        for (var prop in window.data.data) {
+            Vue.set(this.$data, prop, window.data.data[prop]);
+        }
+    },
+    data: function data() {
+        return {
+            contactHeader: '',
+            emailHelper: '',
+            sectionHeader: '',
+            sectionDescription: '',
+            sectionVideoYouTubeURL: '',
+            sectionParagraph1: '',
+            sectionParagraph2: '',
+            contactCardDescription: '',
+            phoneNumberField: '',
+            emailAddressField: '',
+            addressField: ''
+        };
     },
 
     methods: {
         onSubmit: function onSubmit() {
-            console.log('test');
+            var payload = {
+                title: 'contact',
+                data: {}
+            };
+
+            Object.assign(payload.data, this.$data);
+
+            axios.post('/admin/save', payload).then(function (response) {
+                window.location.reload(true);
+            }).catch(function (e) {
+                alert('There was an error. Please contact support.');
+            });
         }
     }
 });
@@ -46951,7 +47000,14 @@ var render = function() {
             [
               _c(
                 "b-form",
-                { on: { submit: _vm.onSubmit } },
+                {
+                  on: {
+                    submit: function($event) {
+                      $event.preventDefault()
+                      return _vm.onSubmit($event)
+                    }
+                  }
+                },
                 [
                   _c(
                     "b-form-group",
@@ -46969,6 +47025,13 @@ var render = function() {
                           type: "text",
                           required: "",
                           placeholder: "Contact Header"
+                        },
+                        model: {
+                          value: _vm.contactHeader,
+                          callback: function($$v) {
+                            _vm.contactHeader = $$v
+                          },
+                          expression: "contactHeader"
                         }
                       })
                     ],
@@ -46991,6 +47054,13 @@ var render = function() {
                           type: "text",
                           required: "",
                           placeholder: "Email Helper Text"
+                        },
+                        model: {
+                          value: _vm.emailHelper,
+                          callback: function($$v) {
+                            _vm.emailHelper = $$v
+                          },
+                          expression: "emailHelper"
                         }
                       })
                     ],
@@ -47013,6 +47083,13 @@ var render = function() {
                           type: "text",
                           required: "",
                           placeholder: "Section Header"
+                        },
+                        model: {
+                          value: _vm.sectionHeader,
+                          callback: function($$v) {
+                            _vm.sectionHeader = $$v
+                          },
+                          expression: "sectionHeader"
                         }
                       })
                     ],
@@ -47035,6 +47112,13 @@ var render = function() {
                           type: "text",
                           required: "",
                           placeholder: "Section Description"
+                        },
+                        model: {
+                          value: _vm.sectionDescription,
+                          callback: function($$v) {
+                            _vm.sectionDescription = $$v
+                          },
+                          expression: "sectionDescription"
                         }
                       })
                     ],
@@ -47057,6 +47141,13 @@ var render = function() {
                           type: "text",
                           required: "",
                           placeholder: "Section Video YouTube URL"
+                        },
+                        model: {
+                          value: _vm.sectionVideoYouTubeURL,
+                          callback: function($$v) {
+                            _vm.sectionVideoYouTubeURL = $$v
+                          },
+                          expression: "sectionVideoYouTubeURL"
                         }
                       })
                     ],
@@ -47067,18 +47158,54 @@ var render = function() {
                     "b-form-group",
                     {
                       attrs: {
-                        label: "Section Paragraph",
-                        "label-for": "sectionParagraph",
+                        label: "Section Paragraph #1",
+                        "label-for": "sectionParagraph1",
                         description: ""
                       }
                     },
                     [
                       _c("b-form-input", {
                         attrs: {
-                          id: "sectionParagraph",
+                          id: "sectionParagraph1",
                           type: "text",
                           required: "",
-                          placeholder: "Section Paragraph"
+                          placeholder: "Section Paragraph #1"
+                        },
+                        model: {
+                          value: _vm.sectionParagraph1,
+                          callback: function($$v) {
+                            _vm.sectionParagraph1 = $$v
+                          },
+                          expression: "sectionParagraph1"
+                        }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "b-form-group",
+                    {
+                      attrs: {
+                        label: "Section Paragraph #2",
+                        "label-for": "sectionParagraph2",
+                        description: ""
+                      }
+                    },
+                    [
+                      _c("b-form-input", {
+                        attrs: {
+                          id: "sectionParagraph2",
+                          type: "text",
+                          required: "",
+                          placeholder: "Section Paragraph #2"
+                        },
+                        model: {
+                          value: _vm.sectionParagraph2,
+                          callback: function($$v) {
+                            _vm.sectionParagraph2 = $$v
+                          },
+                          expression: "sectionParagraph2"
                         }
                       })
                     ],
@@ -47101,6 +47228,13 @@ var render = function() {
                           type: "text",
                           required: "",
                           placeholder: "Contact Card Description"
+                        },
+                        model: {
+                          value: _vm.contactCardDescription,
+                          callback: function($$v) {
+                            _vm.contactCardDescription = $$v
+                          },
+                          expression: "contactCardDescription"
                         }
                       })
                     ],
@@ -47123,6 +47257,13 @@ var render = function() {
                           type: "text",
                           required: "",
                           placeholder: "Phone Number Field"
+                        },
+                        model: {
+                          value: _vm.phoneNumberField,
+                          callback: function($$v) {
+                            _vm.phoneNumberField = $$v
+                          },
+                          expression: "phoneNumberField"
                         }
                       })
                     ],
@@ -47145,6 +47286,13 @@ var render = function() {
                           type: "text",
                           required: "",
                           placeholder: "Email Address Field"
+                        },
+                        model: {
+                          value: _vm.emailAddressField,
+                          callback: function($$v) {
+                            _vm.emailAddressField = $$v
+                          },
+                          expression: "emailAddressField"
                         }
                       })
                     ],
@@ -47167,10 +47315,23 @@ var render = function() {
                           type: "text",
                           required: "",
                           placeholder: "Address Field"
+                        },
+                        model: {
+                          value: _vm.addressField,
+                          callback: function($$v) {
+                            _vm.addressField = $$v
+                          },
+                          expression: "addressField"
                         }
                       })
                     ],
                     1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "b-button",
+                    { attrs: { type: "submit", variant: "primary" } },
+                    [_vm._v("Save")]
                   )
                 ],
                 1

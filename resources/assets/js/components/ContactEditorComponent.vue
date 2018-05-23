@@ -11,14 +11,15 @@
                     <div class="card-header">Contact Page</div>
 
                     <div class="card-body">
-                        <b-form @submit="onSubmit">
+                        <b-form @submit.prevent="onSubmit">
                             <b-form-group label="Contact Header"
                                             label-for="contactHeader"
                                             description="">
                                 <b-form-input id="contactHeader"
                                             type="text"
                                             required
-                                            placeholder="Contact Header">
+                                            placeholder="Contact Header"
+                                            v-model="contactHeader">
                                 </b-form-input>
                             </b-form-group>
                             <b-form-group label="Email Helper Text"
@@ -27,7 +28,8 @@
                                 <b-form-input id="emailHelper"
                                             type="text"
                                             required
-                                            placeholder="Email Helper Text">
+                                            placeholder="Email Helper Text"
+                                            v-model="emailHelper">
                                 </b-form-input>
                             </b-form-group>
                             <b-form-group label="Section Header"
@@ -36,7 +38,8 @@
                                 <b-form-input id="sectionHeader"
                                             type="text"
                                             required
-                                            placeholder="Section Header">
+                                            placeholder="Section Header"
+                                            v-model="sectionHeader">
                                 </b-form-input>
                             </b-form-group>
                             <b-form-group label="Section Description"
@@ -45,7 +48,8 @@
                                 <b-form-input id="sectionDescription"
                                             type="text"
                                             required
-                                            placeholder="Section Description">
+                                            placeholder="Section Description"
+                                            v-model="sectionDescription">
                                 </b-form-input>
                             </b-form-group>
                             <b-form-group label="Section Video YouTube URL"
@@ -54,16 +58,28 @@
                                 <b-form-input id="sectionVideoYouTubeURL"
                                             type="text"
                                             required
-                                            placeholder="Section Video YouTube URL">
+                                            placeholder="Section Video YouTube URL"
+                                            v-model="sectionVideoYouTubeURL">
                                 </b-form-input>
                             </b-form-group>
-                            <b-form-group label="Section Paragraph"
-                                            label-for="sectionParagraph"
+                            <b-form-group label="Section Paragraph #1"
+                                            label-for="sectionParagraph1"
                                             description="">
-                                <b-form-input id="sectionParagraph"
+                                <b-form-input id="sectionParagraph1"
                                             type="text"
                                             required
-                                            placeholder="Section Paragraph">
+                                            placeholder="Section Paragraph #1"
+                                            v-model="sectionParagraph1">
+                                </b-form-input>
+                            </b-form-group>
+                            <b-form-group label="Section Paragraph #2"
+                                            label-for="sectionParagraph2"
+                                            description="">
+                                <b-form-input id="sectionParagraph2"
+                                            type="text"
+                                            required
+                                            placeholder="Section Paragraph #2"
+                                            v-model="sectionParagraph2">
                                 </b-form-input>
                             </b-form-group>
                             <b-form-group label="Contact Card Description"
@@ -72,7 +88,8 @@
                                 <b-form-input id="contactCardDescription"
                                             type="text"
                                             required
-                                            placeholder="Contact Card Description">
+                                            placeholder="Contact Card Description"
+                                            v-model="contactCardDescription">
                                 </b-form-input>
                             </b-form-group>
                             <b-form-group label="Phone Number Field"
@@ -81,7 +98,8 @@
                                 <b-form-input id="phoneNumberField"
                                             type="text"
                                             required
-                                            placeholder="Phone Number Field">
+                                            placeholder="Phone Number Field"
+                                            v-model="phoneNumberField">
                                 </b-form-input>
                             </b-form-group>
                             <b-form-group label="Email Address Field"
@@ -90,7 +108,8 @@
                                 <b-form-input id="emailAddressField"
                                             type="text"
                                             required
-                                            placeholder="Email Address Field">
+                                            placeholder="Email Address Field"
+                                            v-model="emailAddressField">
                                 </b-form-input>
                             </b-form-group>
                             <b-form-group label="Address Field"
@@ -99,9 +118,11 @@
                                 <b-form-input id="addressField"
                                             type="text"
                                             required
-                                            placeholder="Address Field">
+                                            placeholder="Address Field"
+                                            v-model="addressField">
                                 </b-form-input>
                             </b-form-group>
+                            <b-button type="submit" variant="primary">Save</b-button>
                         </b-form>
                     </div>
                 </div>
@@ -113,11 +134,39 @@
 <script>
     export default {
         mounted() {
-            console.log('Component mounted.')
+            for (let prop in window.data.data) {
+                Vue.set(this.$data, prop, window.data.data[prop]);
+            }
+        },
+        data() {
+            return {
+                contactHeader: '',
+                emailHelper: '',
+                sectionHeader: '',
+                sectionDescription: '',
+                sectionVideoYouTubeURL: '',
+                sectionParagraph1: '',
+                sectionParagraph2: '',
+                contactCardDescription: '',
+                phoneNumberField: '',
+                emailAddressField: '',
+                addressField: ''
+            }
         },
         methods: {
             onSubmit() {
-                console.log('test');
+                let payload = {
+                    title: 'contact',
+                    data: {}
+                };
+
+                Object.assign(payload.data, this.$data);
+
+                axios.post('/admin/save', payload).then(response => {
+                    window.location.reload(true);
+                }).catch(e => {
+                    alert('There was an error. Please contact support.');
+                });
             }
         }
     }
