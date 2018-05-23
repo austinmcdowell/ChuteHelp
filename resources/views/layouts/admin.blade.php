@@ -11,6 +11,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
+    @yield('javascript')
     <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->

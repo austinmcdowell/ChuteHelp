@@ -11,7 +11,7 @@
                     <div class="card-header">Home Page</div>
 
                     <div class="card-body">
-                        <b-form @submit="onSubmit">
+                        <b-form @submit.prevent="onSubmit">
                             <b-form-group label="Site Description"
                                             label-for="siteDescription"
                                             description="">
@@ -22,14 +22,24 @@
                                             v-model="siteDescription">
                                 </b-form-input>
                             </b-form-group>
+                            <b-form-group label="Highlight #1 Title"
+                                            label-for="highlight1title"
+                                            description="">
+                                <b-form-input id="highlight1title"
+                                            type="text"
+                                            required
+                                            placeholder="Highlight #1 Title"
+                                            v-model="highlight1title">
+                                </b-form-input>
+                            </b-form-group>
                             <b-form-group label="Highlight #1 Description"
-                                            label-for="highlight1"
+                                            label-for="highlight1description"
                                             description="">
                                 <b-form-input id="highlight1"
                                             type="text"
                                             required
                                             placeholder="Highlight #1 Description"
-                                            v-model="highlight1">
+                                            v-model="highlight1description">
                                 </b-form-input>
                             </b-form-group>
                             <b-form-group label="Highlight #1 YouTube URL"
@@ -52,14 +62,24 @@
                                             v-model="highlight1learnMore">
                                 </b-form-input>
                             </b-form-group>
+                            <b-form-group label="Highlight #2 Title"
+                                            label-for="highlight2title"
+                                            description="">
+                                <b-form-input id="highlight2title"
+                                            type="text"
+                                            required
+                                            placeholder="Highlight #2 Title"
+                                            v-model="highlight2title">
+                                </b-form-input>
+                            </b-form-group>
                             <b-form-group label="Highlight #2 Description"
-                                            label-for="highlight2"
+                                            label-for="highlight2description"
                                             description="">
                                 <b-form-input id="highlight2"
                                             type="text"
                                             required
                                             placeholder="Highlight #2 Description"
-                                            v-model="highlight2">
+                                            v-model="highlight2description">
                                 </b-form-input>
                             </b-form-group>
                             <b-form-group label="Highlight #2 YouTube URL"
@@ -82,14 +102,24 @@
                                             v-model="highlight2learnMore">
                                 </b-form-input>
                             </b-form-group>
+                            <b-form-group label="Highlight #3 Title"
+                                            label-for="highlight3title"
+                                            description="">
+                                <b-form-input id="highlight3title"
+                                            type="text"
+                                            required
+                                            placeholder="Highlight #3 Title"
+                                            v-model="highlight3title">
+                                </b-form-input>
+                            </b-form-group>
                             <b-form-group label="Highlight #3 Description"
-                                            label-for="highlight3"
+                                            label-for="highlight3description"
                                             description="">
                                 <b-form-input id="highlight3"
                                             type="text"
                                             required
                                             placeholder="Highlight #3 Description"
-                                            v-model="highlight3">
+                                            v-model="highlight3description">
                                 </b-form-input>
                             </b-form-group>
                             <b-form-group label="Highlight #3 YouTube URL"
@@ -244,35 +274,53 @@
 <script>
     export default {
         mounted() {
-            console.log('Component mounted.')
+            for (let prop in window.data.data) {
+                Vue.set(this.$data, prop, window.data.data[prop]);
+            }
         },
-        data: {
-            siteDescription: '',
-            highlight1: '',
-            highlight1youtube: '',
-            highlight1learnMore: '',
-            highlight2: '',
-            highlight2youtube: '',
-            highlight2learnMore: '',
-            highlight3: '',
-            highlight3youtube: '',
-            highlight3learnMore: '',
-            productFeature1title: '',
-            productFeature1description: '',
-            productFeature1storePageUrl: '',
-            productFeature2title: '',
-            productFeature2description: '',
-            productFeature2storePageUrl: '',
-            productFeature3title: '',
-            productFeature3description: '',
-            productFeature3storePageUrl: '',
-            learnAboutUs: '',
-            ourProducts: '',
-            findARetailer: ''
+        data() {
+            return {
+                siteDescription: '',
+                highlight1title: '',
+                highlight1description: '',
+                highlight1youtube: '',
+                highlight1learnMore: '',
+                highlight2title: '',
+                highlight2description: '',
+                highlight2youtube: '',
+                highlight2learnMore: '',
+                highlight3title: '',
+                highlight3description: '',
+                highlight3youtube: '',
+                highlight3learnMore: '',
+                productFeature1title: '',
+                productFeature1description: '',
+                productFeature1storePageUrl: '',
+                productFeature2title: '',
+                productFeature2description: '',
+                productFeature2storePageUrl: '',
+                productFeature3title: '',
+                productFeature3description: '',
+                productFeature3storePageUrl: '',
+                learnAboutUs: '',
+                ourProducts: '',
+                findARetailer: ''
+            }
         },
         methods: {
             onSubmit() {
-                console.log('test');
+                let payload = {
+                    title: 'home',
+                    data: {}
+                };
+
+                Object.assign(payload.data, this.$data);
+
+                axios.post('/admin/save', payload).then(response => {
+                    //window.location.reload(true);
+                }).catch(e => {
+                    alert('There was an error. Please contact support.');
+                });
             }
         }
     }

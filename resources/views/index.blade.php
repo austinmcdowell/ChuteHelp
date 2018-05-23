@@ -75,35 +75,33 @@
             <div class="opener">
                 <div class="col-lg-12 green-header">
                     <!-- <h1 align="center"><b>Chute Help Arenas</b></h1> -->
-                    <h3 class="title">Chute Help, Inc. has manufactured innovative roping chutes, arena accessories, and horse training products for the past six years, and continues to be committed to improving and designing high-quality roping chutes and accessories, and bettering the Western industry.</h3>
+                    <h3 class="title">{{ $page->data['siteDescription'] }}</h3>
                 </div>
 
                 <div class="row video-title">
                     <div class="col-lg-6">
                         <div class="embed-responsive embed-responsive-16by9">
-                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/86kig1AOvTQ"></iframe>
+                            <iframe class="embed-responsive-item" src="{{ $page->data['highlight1youtube'] }}"></iframe>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <h2>Product</h2>
-                        <h1>Chute Help Fully Automatic Roping Chute</h1>
-                        <p>The Chute Help Farm Gate is the perfect way to stay stylish, while being functional. The Chute Help Farm Gate is the perfect way to stay stylish. The Chute Help Farm Gate is the perfect way to stay stylish, while being functional. The Chute Help Farm Gate is the perfect way to stay stylish.</p>
-                        <a href="#">Find out more</a>
+                        <h1>{{ $page->data['highlight1title'] }}</h1>
+                        <p>{{ $page->data['highlight1description'] }}</p>
+                        <a href="{{ $page->data['highlight1learnMore'] }}">Find out more</a>
                     </div>
                 </div>
 
                 <div class="row video-title">
                     <div class="col-lg-6">
                         <h2>Product</h2>
-                        <h1>Chute Help Full Arena Setup</h1>
-                        <p>Chute Help's lead ups are all equipped with dual alley stops, making sorting and loading simple.  The dual alley stops make the steer's transition from one section to the next smooth and steady.
-Chute Help's lead ups are all equipped with dual alley stops, making sorting and loading simple.  The dual alley stops make the steer's transition from one section to the next smooth and steady.
-</p>
-                        <a href="#">Find out more</a>
+                        <h1>{{ $page->data['highlight2title'] }}</h1>
+                        <p>{{ $page->data['highlight2description'] }}</p>
+                        <a href="{{ $page->data['highlight2learnMore'] }}">Find out more</a>
                     </div>
                     <div class="col-lg-6">
                         <div class="embed-responsive embed-responsive-16by9">
-                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/B-RLktuDj-o"></iframe>
+                            <iframe class="embed-responsive-item" src="{{ $page->data['highlight2youtube'] }}"></iframe>
                         </div>
                     </div>
                 </div>
@@ -111,14 +109,14 @@ Chute Help's lead ups are all equipped with dual alley stops, making sorting and
                 <div class="row video-title">
                     <div class="col-lg-6">
                         <div class="embed-responsive embed-responsive-16by9">
-                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/XDRyqYBK4aA"></iframe>
+                            <iframe class="embed-responsive-item" src="{{ $page->data['highlight3youtube'] }}"></iframe>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <h2>Story</h2>
-                        <h1>Chute Help Easy Exit Stripping Chute</h1>
-                        <p>The Chute Help Farm Gate is the perfect way to stay stylish, while being functional. The Chute Help Farm Gate is the perfect way to stay stylish. The Chute Help Farm Gate is the perfect way to stay stylish, while being functional. The Chute Help Farm Gate is the perfect way to stay stylish.</p>
-                        <a href="#">Find out more</a>
+                        <h1>{{ $page->data['highlight3title'] }}</h1>
+                        <p>{{ $page->data['highlight3description'] }}</p>
+                        <a href="{{ $page->data['highlight3learnMore'] }}">Find out more</a>
                     </div>
                 </div>
             
@@ -130,10 +128,10 @@ Chute Help's lead ups are all equipped with dual alley stops, making sorting and
                             <img class="card-img-top" src="{{ asset('img/adjust.jpg') }}" alt="Card image cap">
                             <div class="card-body">
                                 <div class="card-desc">
-                                    <h5 class="card-title" align="left">Chute Help Pivoting Adjustable Roping Boxes</h5>
-                                    <p class="card-text" align="left">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <h5 class="card-title" align="left">{{ $page->data['productFeature1title'] }}</h5>
+                                    <p class="card-text" align="left">{{ $page->data['productFeature1description'] }}</p>
                                 </div>
-                                <a href="#" class="btn btn-primary green-store-button" align="center">Visit Store</a>
+                                <a href="{{ $page->data['productFeature1storePageUrl'] }}" class="btn btn-primary green-store-button" align="center">Visit Store</a>
                             </div>
                         </div>
                     </div>
@@ -142,10 +140,10 @@ Chute Help's lead ups are all equipped with dual alley stops, making sorting and
                             <img class="card-img-top" src="{{ asset('img/lead.jpg') }}" alt="Card image cap">
                             <div class="card-body">
                                 <div class="card-desc">
-                                    <h5 class="card-title" align="left"><b>Chute Help Lead Ups</b></h5>
-                                    <p class="card-text" align="left">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <h5 class="card-title" align="left"><b>{{ $page->data['productFeature2title'] }}</b></h5>
+                                    <p class="card-text" align="left">{{ $page->data['productFeature2description'] }}</p>
                                 </div>
-                                <a href="#" class="btn btn-primary green-store-button" align="center">Visit Store</a>
+                                <a href="{{ $page->data['productFeature2storePageUrl'] }}" class="btn btn-primary green-store-button" align="center">Visit Store</a>
                             </div>
                         </div>
                     </div>
@@ -154,10 +152,10 @@ Chute Help's lead ups are all equipped with dual alley stops, making sorting and
                             <img class="card-img-top" src="{{ asset('img/sweep.jpg') }}" alt="Card image cap">
                             <div class="card-body">
                                 <div class="card-desc">
-                                    <h5 class="card-title" align="left"><b>Chute Help Open Sweep</b></h5>
-                                    <p class="card-text" align="left">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <h5 class="card-title" align="left"><b>{{ $page->data['productFeature3title'] }}</b></h5>
+                                    <p class="card-text" align="left">{{ $page->data['productFeature3description'] }}</p>
                                 </div>
-                                <a href="#" class="btn btn-primary green-store-button" align="center">Visit Store</a>
+                                <a href="{{ $page->data['productFeature3storePageUrl'] }}" class="btn btn-primary green-store-button" align="center">Visit Store</a>
                             </div>
                         </div>
                     </div>
@@ -169,18 +167,17 @@ Chute Help's lead ups are all equipped with dual alley stops, making sorting and
                     <div class="col-lg-4 chute-desc-col">
                         <img src="{{ asset('icon/icons/book-8x-green.png') }}" alt="" class="chute-icon">
                         <h3 class="chute-desc-title">Learn About Us</h3>
-                        <p class="chute-desc">Made in Texas, Chute Help continues to improve and design new roping arena accessories that will improve facility efficiency and operation.</p>
+                        <p class="chute-desc">{{ $page->data['learnAboutUs'] }}</p>
                     </div>
                     <div class="col-lg-4 chute-desc-col">
                         <img src="{{ asset('icon/icons/grid-three-up-8x-orange.png') }}" alt="" class="chute-icon">
                         <h3 class="chute-desc-title">Our Products</h3>    
-                        <p class="chute-desc">Chute Help’s automatic roping chute products are easily installed and do not require electricity or an air compression system in the roping arena.</p>
+                        <p class="chute-desc">{{ $page->data['ourProducts'] }}</p>
                     </div>
                     <div class="col-lg-4 chute-desc-col">
                         <img src="{{ asset('icon/icons/globe-8x-green.png') }}" alt="" class="chute-icon">
                         <h3 class="chute-desc-title">Find A Retailer</h3>
-                        <p class="chute-desc">Can’t find an authorized Chute Help retailer near you? Search for retailers with our location tool.
-</p>         
+                        <p class="chute-desc">{{ $page->data['findARetailer'] }}</p>         
                     </div>
                 </div>
                 <div class="row icon-sections">

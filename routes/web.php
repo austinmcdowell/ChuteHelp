@@ -21,4 +21,5 @@ Auth::routes();
 Route::get('/admin', 'AdminController@index');
 Route::get('/admin/retailers', 'AdminController@retailers');
 Route::get('/admin/contact', 'AdminController@contact');
+Route::post('/admin/save', 'AdminController@save');
 

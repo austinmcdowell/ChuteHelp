@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Page;
 use Illuminate\Http\Request;
 
 class SiteController extends Controller
@@ -13,7 +14,10 @@ class SiteController extends Controller
      */
     public function index()
     {
-        return view('index');
+        $page = Page::where('title', 'home')->first();
+        return view('index', [
+            'page' => $page
+        ]);
     }
 
     public function contact()
