@@ -125,7 +125,7 @@
                 <div class="row secondary-products">
                     <div class="col-lg-4 product-wrapper" align="center">
                         <div class="card secondary-product" style="width: 22rem;">
-                            <img class="card-img-top" src="{{ asset('img/adjust.jpg') }}" alt="Card image cap">
+                            <img class="card-img-top" src="{{ $page->assets['productFeatureImage1'] }}" alt="Card image cap">
                             <div class="card-body">
                                 <div class="card-desc">
                                     <h5 class="card-title" align="left">{{ $page->data['productFeature1title'] }}</h5>
@@ -137,7 +137,7 @@
                     </div>
                     <div class="col-lg-4 product-wrapper" align="center">
                         <div class="card secondary-product" style="width: 22rem;">
-                            <img class="card-img-top" src="{{ asset('img/lead.jpg') }}" alt="Card image cap">
+                            <img class="card-img-top" src="{{ $page->assets['productFeatureImage2'] }}" alt="Card image cap">
                             <div class="card-body">
                                 <div class="card-desc">
                                     <h5 class="card-title" align="left"><b>{{ $page->data['productFeature2title'] }}</b></h5>
@@ -149,7 +149,7 @@
                     </div>
                     <div class="col-lg-4 product-wrapper" align="center">
                         <div class="card secondary-product" style="width: 22rem;">
-                            <img class="card-img-top" src="{{ asset('img/sweep.jpg') }}" alt="Card image cap">
+                            <img class="card-img-top" src="{{ $page->assets['productFeatureImage3'] }}" alt="Card image cap">
                             <div class="card-body">
                                 <div class="card-desc">
                                     <h5 class="card-title" align="left"><b>{{ $page->data['productFeature3title'] }}</b></h5>

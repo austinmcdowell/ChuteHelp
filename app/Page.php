@@ -12,5 +12,6 @@ class Page extends Model
 
     protected $casts = [
         'data' => 'array',
+        'assets' => 'array'
     ];
 }

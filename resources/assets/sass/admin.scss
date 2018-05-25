@@ -6,4 +6,10 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
-@import '~bootstrap-vue/dist/bootstrap-vue.css'
+@import '~bootstrap-vue/dist/bootstrap-vue.css';
+
+.image-upload {
+    img {
+        width: 100%;
+    }
+}
