@@ -10723,3 +10723,7 @@ a.text-dark:focus {
   }
 }
 
+.image-upload img {
+  width: 100%;
+}
+

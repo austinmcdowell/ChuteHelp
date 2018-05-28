@@ -162,6 +162,11 @@
                                             v-model="productFeature1description">
                                 </b-form-input>
                             </b-form-group>
+                            <div class="form-group image-upload">
+                                <img :src="productFeatureImage1Src" />
+                                <label for="imageUpload1">Upload Image</label>
+                                <input @change.prevent="setImageForUpload('productFeatureImage1', 'productFeatureImage1Src', $event)" name="imageUpload1" type="file" class="form-control">
+                            </div>
                             <b-form-group label="Product Feature #1 Store Page URL"
                                             label-for="productFeature1storePageUrl"
                                             description="">
@@ -192,6 +197,11 @@
                                             v-model="productFeature2description">
                                 </b-form-input>
                             </b-form-group>
+                            <div class="form-group image-upload">
+                                <img :src="productFeatureImage2Src" />
+                                <label for="imageUpload2">Upload Image</label>
+                                <input @change.prevent="setImageForUpload('productFeatureImage2', 'productFeatureImage2Src', $event)" name="imageUpload2" type="file" class="form-control">
+                            </div>
                             <b-form-group label="Product Feature #2 Store Page URL"
                                             label-for="productFeature1storePageUrl"
                                             description="">
@@ -222,6 +232,11 @@
                                             v-model="productFeature3description">
                                 </b-form-input>
                             </b-form-group>
+                            <div class="form-group image-upload">
+                                <img :src="productFeatureImage3Src" />
+                                <label for="imageUpload3">Upload Image</label>
+                                <input @change.prevent="setImageForUpload('productFeatureImage3', 'productFeatureImage3Src', $event)" name="imageUpload3" type="file" class="form-control">
+                            </div>
                             <b-form-group label="Product Feature #3 Store Page URL"
                                             label-for="productFeature3storePageUrl"
                                             description="">
@@ -277,6 +292,10 @@
             for (let prop in window.data.data) {
                 Vue.set(this.$data, prop, window.data.data[prop]);
             }
+
+            for (let prop in window.data.assets) {
+                Vue.set(this.$data, prop + 'Src', window.data.assets[prop]);
+            }
         },
         data() {
             return {
@@ -304,19 +323,61 @@
                 productFeature3storePageUrl: '',
                 learnAboutUs: '',
                 ourProducts: '',
-                findARetailer: ''
+                findARetailer: '',
+                productFeatureImage1: null,
+                productFeatureImage2: null,
+                productFeatureImage3: null,
+                productFeatureImage1Src: '',
+                productFeatureImage2Src: '',
+                productFeatureImage3Src: ''
             }
         },
         methods: {
+            setImageForUpload(imageKey, imageSrcKey, event) {
+                let $this = this;
+                let file = event.srcElement.files[0];
+                let reader = new FileReader();
+
+                reader.addEventListener('load', function() {
+                    Vue.set($this.$data, imageSrcKey, reader.result);
+                });
+                
+                if (file) {
+                    reader.readAsDataURL(file);
+                }
+
+                Vue.set($this.$data, imageKey, file);
+            },
             onSubmit() {
-                let payload = {
-                    title: 'home',
-                    data: {}
-                };
+                let form = new FormData();
+                let data = {};
+                let title = 'home';
 
-                Object.assign(payload.data, this.$data);
+                Object.assign(data, this.$data);
 
-                axios.post('/admin/save', payload).then(response => {
+                delete data.productFeatureImage1;
+                delete data.productFeatureImage2;
+                delete data.productFeatureImage3;
+                delete data.productFeatureImage1Src;
+                delete data.productFeatureImage2Src;
+                delete data.productFeatureImage3Src;
+
+                form.append('title', title);
+                form.append('data', JSON.stringify(data));
+
+                if (this.$data.productFeatureImage1) {
+                    form.append('productFeatureImage1', this.$data.productFeatureImage1);
+                }
+
+                if (this.$data.productFeatureImage2) {
+                    form.append('productFeatureImage2', this.$data.productFeatureImage2);
+                }
+
+                if (this.$data.productFeatureImage3) {
+                    form.append('productFeatureImage3', this.$data.productFeatureImage3);
+                }
+
+                axios.post('/admin/save', form).then(response => {
                     window.location.reload(true);
                 }).catch(e => {
                     alert('There was an error. Please contact support.');
