@@ -19,6 +19,7 @@ window.Vue = require('vue');
 
 Vue.component('home-editor', require('./components/HomeEditorComponent.vue'));
 Vue.component('contact-editor', require('./components/ContactEditorComponent.vue'));
+Vue.component('add-retailer', require('./components/AddRetailerComponent.vue'));
 
 
 Vue.use(BootstrapVue);

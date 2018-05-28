@@ -23,3 +23,8 @@ Route::get('/admin/retailers', 'AdminController@retailers');
 Route::get('/admin/contact', 'AdminController@contact');
 Route::post('/admin/save', 'AdminController@save');
 
+Route::get('/admin/retailers', 'RetailerController@index');
+Route::get('/admin/retailers/add', 'RetailerController@add');
+Route::get('/admin/retailer/edit/{id}', 'RetailerController@edit');
+Route::post('/admin/retailer/save', 'RetailerController@save');
+

@@ -13,7 +13,7 @@ class AdminController extends Controller
     private function generate_filename($file)
     {
         $date = new DateTime;
-        return $date->getTimestamp(). $file->getClientOriginalName();
+        return $date->getTimestamp() . $file->getClientOriginalName();
     }
 
     public function __construct()
