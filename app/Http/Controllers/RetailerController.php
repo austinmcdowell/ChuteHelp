@@ -10,6 +10,11 @@ use Illuminate\Http\Request;
 
 class RetailerController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function index()
     {
         $retailers = Retailer::get();
@@ -77,5 +82,20 @@ class RetailerController extends Controller
         }
 
         return response()->json(['success' => true], 200);
+    }
+
+    public function delete_location(Request $request)
+    {
+        $location_id = $request->json('id');
+        $location = Location::findOrFail($location_id);
+        $location->delete();
+        return response()->json(['success' => true], 200);
+    }
+
+    public function delete($id)
+    {
+        $retailer = Retailer::findOrFail($id);
+        $retailer->delete();
+        return redirect('/admin/retailers');
     }
 }

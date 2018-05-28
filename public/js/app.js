@@ -66423,6 +66423,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     mounted: function mounted() {
@@ -66468,7 +66478,23 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 city: '',
                 state: '',
                 zip_code: '',
-                phone: ''
+                phone: '',
+                shouldShow: true,
+                newlyAdded: true
+            });
+        },
+        deleteLocation: function deleteLocation(location, index) {
+            var $this = this;
+
+            if (location.newlyAdded) {
+                this.locations.splice(index, 1);
+                return;
+            }
+
+            axios.post('/admin/location/delete', { id: location.id }).then(function (response) {
+                $this.locations.splice(index, 1);
+            }).catch(function (e) {
+                alert('Something went wrong. Please contact support.');
             });
         },
         onSubmit: function onSubmit() {
@@ -66602,146 +66628,227 @@ var render = function() {
                   _vm._v(" "),
                   _vm._l(_vm.locations, function(location, index) {
                     return _c(
-                      "div",
-                      { key: "location-" + index },
+                      "b-card",
+                      {
+                        key: "location-" + index,
+                        staticClass: "mb-1",
+                        attrs: { "no-body": "" }
+                      },
                       [
                         _c(
-                          "b-form-group",
+                          "b-card-header",
                           {
-                            attrs: {
-                              label: "Address",
-                              "label-for": "locationAddress"
-                            }
+                            staticClass: "p-1",
+                            attrs: { "header-tag": "header", role: "tab" }
                           },
                           [
-                            _c("b-form-input", {
-                              attrs: {
-                                id: "locationAddress",
-                                type: "text",
-                                required: "",
-                                placeholder: "Address"
+                            _c(
+                              "b-btn",
+                              {
+                                directives: [
+                                  {
+                                    name: "b-toggle",
+                                    rawName: "v-b-toggle",
+                                    value: "accordion-" + index,
+                                    expression: "`accordion-${index}`"
+                                  }
+                                ],
+                                attrs: { block: "", href: "#", variant: "info" }
                               },
-                              model: {
-                                value: location.address,
-                                callback: function($$v) {
-                                  _vm.$set(location, "address", $$v)
-                                },
-                                expression: "location.address"
-                              }
-                            })
+                              [
+                                _vm._v(
+                                  "\n                                    " +
+                                    _vm._s(
+                                      location.address +
+                                        ", " +
+                                        location.city +
+                                        ", " +
+                                        location.state +
+                                        " " +
+                                        location.zip_code
+                                    ) +
+                                    "\n                                "
+                                )
+                              ]
+                            )
                           ],
                           1
                         ),
                         _vm._v(" "),
                         _c(
-                          "b-form-group",
+                          "b-collapse",
                           {
-                            attrs: {
-                              label: "City",
-                              "label-for": "locationCity"
+                            attrs: { id: "accordion-" + index },
+                            model: {
+                              value: location.shouldShow,
+                              callback: function($$v) {
+                                _vm.$set(location, "shouldShow", $$v)
+                              },
+                              expression: "location.shouldShow"
                             }
                           },
                           [
-                            _c("b-form-input", {
-                              attrs: {
-                                id: "locationCity",
-                                type: "text",
-                                required: "",
-                                placeholder: "City"
-                              },
-                              model: {
-                                value: location.city,
-                                callback: function($$v) {
-                                  _vm.$set(location, "city", $$v)
-                                },
-                                expression: "location.city"
-                              }
-                            })
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "b-form-group",
-                          {
-                            attrs: {
-                              label: "State",
-                              "label-for": "locationState"
-                            }
-                          },
-                          [
-                            _c("b-form-select", {
-                              attrs: {
-                                id: "locationState",
-                                options: _vm.states,
-                                required: ""
-                              },
-                              model: {
-                                value: location.state,
-                                callback: function($$v) {
-                                  _vm.$set(location, "state", $$v)
-                                },
-                                expression: "location.state"
-                              }
-                            })
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "b-form-group",
-                          {
-                            attrs: {
-                              label: "Zip Code",
-                              "label-for": "locationZip"
-                            }
-                          },
-                          [
-                            _c("b-form-input", {
-                              attrs: {
-                                id: "locationZip",
-                                type: "text",
-                                required: "",
-                                placeholder: "Zip"
-                              },
-                              model: {
-                                value: location.zip_code,
-                                callback: function($$v) {
-                                  _vm.$set(location, "zip_code", $$v)
-                                },
-                                expression: "location.zip_code"
-                              }
-                            })
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "b-form-group",
-                          {
-                            attrs: {
-                              label: "Phone",
-                              "label-for": "locationPhone"
-                            }
-                          },
-                          [
-                            _c("b-form-input", {
-                              attrs: {
-                                id: "locationPhone",
-                                type: "text",
-                                required: "",
-                                placeholder: "Phone"
-                              },
-                              model: {
-                                value: location.phone,
-                                callback: function($$v) {
-                                  _vm.$set(location, "phone", $$v)
-                                },
-                                expression: "location.phone"
-                              }
-                            }),
-                            _vm._v(" "),
-                            _c("hr")
+                            _c(
+                              "b-card-body",
+                              [
+                                _c(
+                                  "b-form-group",
+                                  {
+                                    attrs: {
+                                      label: "Address",
+                                      "label-for": "locationAddress"
+                                    }
+                                  },
+                                  [
+                                    _c("b-form-input", {
+                                      attrs: {
+                                        id: "locationAddress",
+                                        type: "text",
+                                        required: "",
+                                        placeholder: "Address"
+                                      },
+                                      model: {
+                                        value: location.address,
+                                        callback: function($$v) {
+                                          _vm.$set(location, "address", $$v)
+                                        },
+                                        expression: "location.address"
+                                      }
+                                    })
+                                  ],
+                                  1
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "b-form-group",
+                                  {
+                                    attrs: {
+                                      label: "City",
+                                      "label-for": "locationCity"
+                                    }
+                                  },
+                                  [
+                                    _c("b-form-input", {
+                                      attrs: {
+                                        id: "locationCity",
+                                        type: "text",
+                                        required: "",
+                                        placeholder: "City"
+                                      },
+                                      model: {
+                                        value: location.city,
+                                        callback: function($$v) {
+                                          _vm.$set(location, "city", $$v)
+                                        },
+                                        expression: "location.city"
+                                      }
+                                    })
+                                  ],
+                                  1
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "b-form-group",
+                                  {
+                                    attrs: {
+                                      label: "State",
+                                      "label-for": "locationState"
+                                    }
+                                  },
+                                  [
+                                    _c("b-form-select", {
+                                      attrs: {
+                                        id: "locationState",
+                                        options: _vm.states,
+                                        required: ""
+                                      },
+                                      model: {
+                                        value: location.state,
+                                        callback: function($$v) {
+                                          _vm.$set(location, "state", $$v)
+                                        },
+                                        expression: "location.state"
+                                      }
+                                    })
+                                  ],
+                                  1
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "b-form-group",
+                                  {
+                                    attrs: {
+                                      label: "Zip Code",
+                                      "label-for": "locationZip"
+                                    }
+                                  },
+                                  [
+                                    _c("b-form-input", {
+                                      attrs: {
+                                        id: "locationZip",
+                                        type: "text",
+                                        required: "",
+                                        placeholder: "Zip"
+                                      },
+                                      model: {
+                                        value: location.zip_code,
+                                        callback: function($$v) {
+                                          _vm.$set(location, "zip_code", $$v)
+                                        },
+                                        expression: "location.zip_code"
+                                      }
+                                    })
+                                  ],
+                                  1
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "b-form-group",
+                                  {
+                                    attrs: {
+                                      label: "Phone",
+                                      "label-for": "locationPhone"
+                                    }
+                                  },
+                                  [
+                                    _c("b-form-input", {
+                                      attrs: {
+                                        id: "locationPhone",
+                                        type: "text",
+                                        required: "",
+                                        placeholder: "Phone"
+                                      },
+                                      model: {
+                                        value: location.phone,
+                                        callback: function($$v) {
+                                          _vm.$set(location, "phone", $$v)
+                                        },
+                                        expression: "location.phone"
+                                      }
+                                    }),
+                                    _vm._v(" "),
+                                    _c("hr")
+                                  ],
+                                  1
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "a",
+                                  {
+                                    staticClass: "btn btn-danger",
+                                    attrs: { href: "#" },
+                                    on: {
+                                      click: function($event) {
+                                        $event.preventDefault()
+                                        _vm.deleteLocation(location, index)
+                                      }
+                                    }
+                                  },
+                                  [_vm._v("Delete")]
+                                )
+                              ],
+                              1
+                            )
                           ],
                           1
                         )

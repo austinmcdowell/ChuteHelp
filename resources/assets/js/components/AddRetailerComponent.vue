@@ -33,58 +33,68 @@
                                 <input @change.prevent="setImageForUpload($event)" name="logoUpload" class="form-control" type="file" />
                             </div>
                             <h2>Locations</h2>
-                            <div v-for="(location, index) in locations" :key="`location-${index}`" >
-                                <b-form-group 
-                                    label="Address"
-                                    label-for="locationAddress">
-                                    <b-form-input 
-                                        id="locationAddress"
-                                        type="text"
-                                        required
-                                        placeholder="Address"
-                                        v-model="location.address"
-                                        ></b-form-input>
-                                </b-form-group>
-                                <b-form-group 
-                                    label="City"
-                                    label-for="locationCity">
-                                    <b-form-input 
-                                        id="locationCity"
-                                        type="text"
-                                        required
-                                        placeholder="City"
-                                        v-model="location.city"
-                                        ></b-form-input>
-                                </b-form-group>
-                                <b-form-group 
-                                    label="State"
-                                    label-for="locationState">
-                                    <b-form-select id="locationState" :options="states" v-model="location.state" required></b-form-select>
-                                </b-form-group>
-                                <b-form-group 
-                                    label="Zip Code"
-                                    label-for="locationZip">
-                                    <b-form-input 
-                                        id="locationZip"
-                                        type="text"
-                                        required
-                                        placeholder="Zip"
-                                        v-model="location.zip_code"
-                                        ></b-form-input>
-                                </b-form-group>
-                                <b-form-group 
-                                    label="Phone"
-                                    label-for="locationPhone">
-                                    <b-form-input 
-                                        id="locationPhone"
-                                        type="text"
-                                        required
-                                        placeholder="Phone"
-                                        v-model="location.phone"
-                                        ></b-form-input>
-                                        <hr>
-                                </b-form-group>
-                            </div>
+                            <b-card v-for="(location, index) in locations" :key="`location-${index}`" no-body class="mb-1">
+                                <b-card-header header-tag="header" class="p-1" role="tab">
+                                    <b-btn block href="#" v-b-toggle="`accordion-${index}`" variant="info">
+                                        {{ `${location.address}, ${location.city}, ${location.state} ${location.zip_code}` }}
+                                    </b-btn>
+                                </b-card-header>
+                                <b-collapse v-model="location.shouldShow" :id="`accordion-${index}`">
+                                    <b-card-body>
+                                        <b-form-group 
+                                        label="Address"
+                                        label-for="locationAddress">
+                                            <b-form-input 
+                                                id="locationAddress"
+                                                type="text"
+                                                required
+                                                placeholder="Address"
+                                                v-model="location.address"
+                                                ></b-form-input>
+                                        </b-form-group>
+                                        <b-form-group 
+                                            label="City"
+                                            label-for="locationCity">
+                                            <b-form-input 
+                                                id="locationCity"
+                                                type="text"
+                                                required
+                                                placeholder="City"
+                                                v-model="location.city"
+                                                ></b-form-input>
+                                        </b-form-group>
+                                        <b-form-group 
+                                            label="State"
+                                            label-for="locationState">
+                                            <b-form-select id="locationState" :options="states" v-model="location.state" required></b-form-select>
+                                        </b-form-group>
+                                        <b-form-group 
+                                            label="Zip Code"
+                                            label-for="locationZip">
+                                            <b-form-input 
+                                                id="locationZip"
+                                                type="text"
+                                                required
+                                                placeholder="Zip"
+                                                v-model="location.zip_code"
+                                                ></b-form-input>
+                                        </b-form-group>
+                                        <b-form-group 
+                                            label="Phone"
+                                            label-for="locationPhone">
+                                            <b-form-input 
+                                                id="locationPhone"
+                                                type="text"
+                                                required
+                                                placeholder="Phone"
+                                                v-model="location.phone"
+                                                ></b-form-input>
+                                                <hr>
+                                        </b-form-group>
+                                        <a @click.prevent="deleteLocation(location, index)" class="btn btn-danger" href="#">Delete</a>
+                                    </b-card-body>
+                                </b-collapse>
+                            </b-card>
                             <a @click.prevent="addLocation" href="#" class="btn btn-primary">Add Location</a>
                             <b-button type="submit" variant="primary">Save</b-button>
                         </b-form>
@@ -139,7 +149,23 @@ export default {
                 city: '',
                 state: '',
                 zip_code: '',
-                phone: ''
+                phone: '',
+                shouldShow: true,
+                newlyAdded: true
+            });
+        },
+        deleteLocation(location, index) {
+            let $this = this;
+
+            if (location.newlyAdded) {
+                this.locations.splice(index, 1);
+                return;
+            }
+
+            axios.post(`/admin/location/delete`, {id : location.id}).then(response => {
+                $this.locations.splice(index, 1);
+            }).catch(e => {
+                alert('Something went wrong. Please contact support.');
             });
         },
         onSubmit() {
