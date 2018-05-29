@@ -76,7 +76,7 @@ button {
 .background-image {
   width: 100%;
   height: auto;
-  background-size: 100%;
+  background-size: cover;
   background-repeat: no-repeat;
 }
 

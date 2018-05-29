@@ -42,6 +42,21 @@ body {
     height: 100%;
     width: 2000px;
   }
+
+  .newsletter {
+    width: 100% !important;
+    padding: 0;
+    margin: 0 !important;
+    border-radius: 0px !important;
+  }
+
+  .email-newsletter {
+    margin: 3% 0 0 0;
+  }
+
+  .contact-header-title {
+    margin: 0 0 0 0 !important;
+  }
 }
 
 
@@ -67,6 +82,10 @@ body {
 .nav-link {
   font-size: 1.1em !important;
   color: $green-color;
+}
+
+.site-background {
+  background-size: cover;
 }
 
 .link-font {
@@ -110,23 +129,16 @@ body {
 }
 
 
-.contact-header {
-  position: absolute;
-
-  width: 100%;
-  height: 184%;
-  margin: -70% 0 0 0;
+.contact-header-title {
 
   font-family: 'Anton';
-
-  background: rgba(0, 0, 0, .65);
 }
 
-.contact-header h1 {
-  margin: 42% 0 0 0;
-  color: white;
+.contact-header-title h1 {
+  margin: 42% 0 42% 0 !important;
+  color: white !important;
 
-  font-size: 70px;
+  font-size: 4vw;
 }
 
 .contact-desc-title {
@@ -147,7 +159,7 @@ body {
 
 .contact-desc-title h2 {
   width: 80%;
-  margin: 1% 0 5% 10%;
+  margin: 1% 0 5% 0;
 
   color: rgb(90, 90, 100);
   font-family: 'Roboto';
@@ -172,8 +184,8 @@ body {
 
 .newsletter {
   margin: -4% 0 5% 25%;
-  padding: 2% 0 0 0;
-  height: 120px;
+  padding: 2% 0 2% 0;
+  height: auto;
   width: 50%;
 
   background: rgb(50, 50, 50);
@@ -223,7 +235,7 @@ body {
 }
 
 .email-news-form {
-width: 200px;
+width: 100% !important;
 
 margin: 10px 0 0 0;
 }
@@ -240,13 +252,14 @@ margin: 10px 0 0 0;
 
 .contact-form {
   margin: 2% 0 0 0;
+  padding: 2%;
   background: $green-color;
 }
 
 .contact-form-inner {
   width: 90%;
   margin: 5% 0 5% 5%;
-  padding: 4% 0;
+  padding: 4%;
 
   background: white;
 }
@@ -266,8 +279,8 @@ margin: 10px 0 0 0;
 }
 
 .contact-form-title {
-  width: 20%;
-  margin: 0 0 0 40%;
+  width: 100%;
+  margin: 0;
 }
 
 .contact-us-info {

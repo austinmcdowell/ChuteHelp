@@ -23,6 +23,7 @@
         <!-- Styles -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css">
         <link href="{{ asset('css/contact.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css">
 
         <!-- JS -->
         <!-- <script src="{{ asset('js/app.js') }}"></script> -->
@@ -32,74 +33,73 @@
         
 
         <!-- LAUNCH VIDEO/IMAGE -->
-        <div class="launch text-center">
-            <img src="{{ asset('img/bck-short.jpg') }}" alt="Responsive image" class="image-fluid site-background" style="max-width: 100%">
-            <!-- <video src="{{ asset('video/chute-help.mov') }}" alt="Responsive image" class="image-fluid" style="max-width: 100%"> -->
-            
-            <div class="contact-header">
-                <!-- NAVIGATION -->
-                <nav class="navbar navbar-expand-md navbar-dark sticky-top see-through">
-                    <div class="container-fluid">
-                        <a href="/" class="navbar-brand chute-logo"><b><i>CHUTE HELP</i></b></a>
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarResponsive">
-                            <ul class="navbar-nav ml-auto">
-                                <li class="nav-item">
-                                    <a href="/" class="nav-link active link-font">Home</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link link-font">Store</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link link-font">Retailers</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="/contact" class="nav-link link-font">Contact</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
+        <div class="background-image" style="background-image: url('{{ asset('img/bck-dark.jpg') }}')">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark chute-nav">
+                <a href="#" class="navbar-brand">CHUTEHELP</a>
 
-                <h1 align="center" class="contact-header-title">{{ $page->data['contactHeader'] }}</h1>
-            </div>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+
+                <div class="collapse navbar-collapse ml-auto" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Store</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Retailers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <img src="{{ asset('img/chute-help-logo.png') }}" class="img-fluid chute-logo-launch" alt="Responsive image">
         </div>
 
         <div class="row newsletter">
-            <div class="col-lg-1"></div>
-            <div class="col-lg-4 newsletter-signup-title">
-                <p>{{ $page->data['emailHelper'] }}</p>
+            <div class="col-sm-12 col-lg-3 newsletter-signup-title" align="center">
+                <p>Sign Up For Our Newsletter</p>
             </div>
-            <div class="col-lg-4">
+            <div class="col-sm-8 col-md-8 col-lg-6">
                 <div class="form-group email-newsletter">
                     <!-- <label for="form_email">Email *</label> -->
                     <input id="form_email" type="email" name="email" class="form-control email-news-form" placeholder="Email *" required="required" data-error="Valid email is required.">
                     <div class="help-block with-errors"></div>
                 </div>
             </div>
-            <div class="col-lg-3">
+            <div class="col-sm-3 col-lg-3" align="center">
                 <input type="submit" class="btn btn-success btn-send newsletter-button" value="Sign Up">
             </div>
         </div>
 
         <div class="row contact-desc-title" align="center">
-            <h1>{{ $page->data['sectionHeader'] }}</h1>
-            <h2>{{ $page->data['sectionDescription'] }}</h2>
+            <div class="col-lg-12">
+                <h1 align="center">Contact Description</h1>
+            </div>
+            <div class="col-lg-12">
+                <h2 align="center">Section Description</h2>
+            </div>
+            
         </div>
         
         <div class="row about">
             <div class="col-lg-1"></div>
             <div class="col-lg-5">
                 <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" src="{{ $page->data['sectionVideoYouTubeURL'] }}"></iframe>
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/sfCExBGB8RY"></iframe>
                 </div>
             </div>
 
             <div class="col-lg-5">
-                <p>{{ $page->data['sectionParagraph1'] }}</p>
-                <p>{{ $page->data['sectionParagraph2'] }}</p>
+                <p>paragraph</p>
+                <p>paragraph</p>
             </div>
             <div class="col-lg-1"></div>
         </div>
@@ -115,10 +115,10 @@
                 <div class="row">
                     <div class="col-lg-1"></div>
                     <div class="col-lg-5">
-                        <p class="contact-us-info"><p>{{ $page->data['contactCardDescription'] }}</p></p>
-                        <p><span class="anton">Phone:</span> {{ $page->data['phoneNumberField'] }}</p>
-                        <p><span class="anton">Email:</span> {{ $page->data['emailAddressField'] }}</p>
-                        <p><span class="anton">Address:</span> {{ $page->data['addressField'] }}</p>
+                        <p class="contact-us-info"><p>Contact Us Paragraph</p></p>
+                        <p><span class="anton">Phone:</span>Phone</p>
+                        <p><span class="anton">Email:</span>Email</p>
+                        <p><span class="anton">Address:</span>Address</p>
                     </div>
                     <div class="col-lg-1"></div>
                     <div class="col-lg-4">
