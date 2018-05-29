@@ -115,9 +115,9 @@
                 <div class="row">
                     <div class="col-lg-4 offset-lg-1">
                         <p class="contact-us-info"><p>{{ $page->data['contactCardDescription'] }}</p></p>
-                        <p><span class="anton">Phone:</span>{{ $page->data['phoneNumberField'] }}</p>
-                        <p><span class="anton">Email:</span>{{ $page->data['emailAddressField'] }}</p>
-                        <p><span class="anton">Address:</span>{{ $page->data['addressField'] }}</p>
+                        <p><span class="anton">Phone: </span>{{ $page->data['phoneNumberField'] }}</p>
+                        <p><span class="anton">Email: </span><a href="mailto:{{ $page->data['emailAddressField'] }}">{{ $page->data['emailAddressField'] }}</a></p>
+                        <p><span class="anton">Address: </span>{{ $page->data['addressField'] }}</p>
                     </div>
                     <div class="col-lg-6 offset-lg-1">
                         <div class="row">
