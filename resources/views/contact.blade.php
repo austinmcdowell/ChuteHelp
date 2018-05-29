@@ -65,7 +65,7 @@
 
         <div class="row newsletter">
             <div class="col-sm-12 col-lg-3 newsletter-signup-title" align="center">
-                <p>Sign Up For Our Newsletter</p>
+                <p>{{ $page->data['emailHelper'] }}</p>
             </div>
             <div class="col-sm-8 col-md-8 col-lg-6">
                 <div class="form-group email-newsletter">
@@ -81,10 +81,10 @@
 
         <div class="row contact-desc-title" align="center">
             <div class="col-lg-12">
-                <h1 align="center">Contact Description</h1>
+                <h1 align="center">{{ $page->data['sectionHeader'] }}</h1>
             </div>
             <div class="col-lg-12">
-                <h2 align="center">Section Description</h2>
+                <h2 align="center">{{ $page->data['sectionDescription'] }}</h2>
             </div>
             
         </div>
@@ -93,13 +93,13 @@
             <div class="col-lg-1"></div>
             <div class="col-lg-5">
                 <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/sfCExBGB8RY"></iframe>
+                    <iframe class="embed-responsive-item" src="{{ $page->data['sectionVideoYouTubeURL'] }}"></iframe>
                 </div>
             </div>
 
             <div class="col-lg-5">
-                <p>paragraph</p>
-                <p>paragraph</p>
+                <p>{{ $page->data['sectionParagraph1'] }}</p>
+                <p>{{ $page->data['sectionParagraph2'] }}</p>
             </div>
             <div class="col-lg-1"></div>
         </div>
@@ -114,10 +114,17 @@
 
                 <div class="row">
                     <div class="col-lg-4 offset-lg-1">
+<<<<<<< HEAD
                         <p class="contact-us-info"><p>Contact Us Paragraph</p></p>
                         <p><span class="anton">Phone:</span>Phone</p>
                         <p><span class="anton">Email:</span>Email</p>
                         <p><span class="anton">Address:</span>Address</p>
+=======
+                        <p class="contact-us-info"><p>{{ $page->data['contactCardDescription'] }}</p></p>
+                        <p><span class="anton">Phone:</span>{{ $page->data['phoneNumberField'] }}</p>
+                        <p><span class="anton">Email:</span>{{ $page->data['emailAddressField'] }}</p>
+                        <p><span class="anton">Address:</span>{{ $page->data['addressField'] }}</p>
+>>>>>>> 643d8f722a66b9f80bf8dfcb918a80d103a68c4c
                     </div>
                     <div class="col-lg-6 offset-lg-1">
                         <div class="row">
