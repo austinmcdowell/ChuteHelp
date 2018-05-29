@@ -121,7 +121,7 @@
             <div class="row secondary-products">
                 <div class="col-lg-4 col-sm-12">
                     <div class="card">
-                        <img class="card-img-top" src="{{ asset('img/adjust.jpg')}}" alt="Card image cap">
+                        <img class="card-img-top" src="{{ $page->assets['productFeatureImage1'] }}" alt="Card image cap">
                         <div class="card-body">
                             <div class="card-title-div">
                                 <h5 class="card-title">{{ $page->data['productFeature1title'] }}</h5>
@@ -136,7 +136,7 @@
 
                 <div class="col-lg-4 col-sm-12">
                     <div class="card">
-                        <img class="card-img-top" src="{{ asset('img/adjust.jpg')}}" alt="Card image cap">
+                        <img class="card-img-top" src="{{ $page->assets['productFeatureImage2'] }}" alt="Card image cap">
                         <div class="card-body">
                             <div class="card-title-div">
                                 <h5 class="card-title">{{ $page->data['productFeature2title'] }}</h5>
@@ -150,7 +150,7 @@
 
                 <div class="col-lg-4 col-sm-12">
                     <div class="card">
-                        <img class="card-img-top" src="{{ asset('img/adjust.jpg')}}" alt="Card image cap">
+                        <img class="card-img-top" src="{{ $page->assets['productFeatureImage3'] }}" alt="Card image cap">
                         <div class="card-body">
                             <div class="card-title-div">
                                 <h5 class="card-title">{{ $page->data['productFeature3title'] }}</h5>
