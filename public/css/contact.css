@@ -227,14 +227,14 @@ body {
 }
 
 .contact-form h1 {
-  margin: 0 0 20% 0;
+  margin: 0 0 5% 0;
   font-size: 40px !important;
   font-family: 'Anton';
   color: #5a5a64;
 }
 
 .contact-form p {
-  margin: 2% 0;
+  margin: 2% 0 !important;
   font-size: 17px !important;
   font-family: 'Roboto';
   color: #5a5a64;

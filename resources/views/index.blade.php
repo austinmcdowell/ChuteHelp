@@ -123,10 +123,14 @@
                     <div class="card">
                         <img class="card-img-top" src="{{ asset('img/adjust.jpg')}}" alt="Card image cap">
                         <div class="card-body">
-                            <h5 class="card-title">{{ $page->data['productFeature1title'] }}</h5>
+                            <div class="card-title-div">
+                                <h5 class="card-title">{{ $page->data['productFeature1title'] }}</h5>
+                            </div>
+                            
                             <p class="card-text">{{ $page->data['productFeature1description'] }}</p>
-                            <a href="{{ $page->data['productFeature1storePageUrl'] }}" class="btn btn-primary visit-store-button">Visit Store</a>
+                            
                         </div>
+                        <a href="{{ $page->data['productFeature1storePageUrl'] }}" class="btn btn-primary visit-store-button">Visit Store</a>
                     </div>
                 </div>
 
@@ -134,10 +138,13 @@
                     <div class="card">
                         <img class="card-img-top" src="{{ asset('img/adjust.jpg')}}" alt="Card image cap">
                         <div class="card-body">
-                            <h5 class="card-title">{{ $page->data['productFeature2title'] }}</h5>
+                            <div class="card-title-div">
+                                <h5 class="card-title">{{ $page->data['productFeature2title'] }}</h5>
+                            </div>
                             <p class="card-text">{{ $page->data['productFeature2description'] }}</p>
-                            <a href="{{ $page->data['productFeature2storePageUrl'] }}" class="btn btn-primary visit-store-button">Visit Store</a>
+                            
                         </div>
+                        <a href="{{ $page->data['productFeature2storePageUrl'] }}" class="btn btn-primary visit-store-button">Visit Store</a>
                     </div>
                 </div>
 
@@ -145,10 +152,13 @@
                     <div class="card">
                         <img class="card-img-top" src="{{ asset('img/adjust.jpg')}}" alt="Card image cap">
                         <div class="card-body">
-                            <h5 class="card-title">{{ $page->data['productFeature3title'] }}</h5>
+                            <div class="card-title-div">
+                                <h5 class="card-title">{{ $page->data['productFeature3title'] }}</h5>
+                            </div>
                             <p class="card-text">{{ $page->data['productFeature3description'] }}</p>
-                            <a href="{{ $page->data['productFeature3storePageUrl'] }}" class="btn btn-primary visit-store-button">Visit Store</a>
+                            
                         </div>
+                        <a href="{{ $page->data['productFeature3storePageUrl'] }}" class="btn btn-primary visit-store-button" align="center">Visit Store</a>
                     </div>
                 </div>
                 
@@ -163,7 +173,7 @@
                         <h2>Learn About Us</h2>
                         <p>{{ $page->data['learnAboutUs'] }}</p>
                     </div>
-                    <a class="btn btn-primary" href="/contact">Contact</a>
+                    <a class="btn btn-primary info-button" href="/contact">Contact</a>
                 </div>
                 
                 <div class="col-sm-12 col-lg-4">
@@ -172,7 +182,7 @@
                         <h2>Our Products</h2>
                         <p>{{ $page->data['ourProducts'] }}</p>
                     </div>
-                    <a class="btn btn-primary" href="#">Store</a>
+                    <a class="btn btn-primary info-button" href="#">Store</a>
                 </div>
 
                 <div class="col-sm-12 col-lg-4">
@@ -181,7 +191,7 @@
                         <h2>Find A Retailer</h2>
                         <p>{{ $page->data['findARetailer'] }}</p>
                     </div>
-                    <a class="btn btn-primary" href="/retailers">Retailers</a>
+                    <a class="btn btn-primary info-button" href="/retailers">Retailers</a>
                 </div>
             </div>
         </div>

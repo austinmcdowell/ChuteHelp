@@ -113,15 +113,13 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-lg-1"></div>
-                    <div class="col-lg-5">
+                    <div class="col-lg-4 offset-lg-1">
                         <p class="contact-us-info"><p>Contact Us Paragraph</p></p>
                         <p><span class="anton">Phone:</span>Phone</p>
                         <p><span class="anton">Email:</span>Email</p>
                         <p><span class="anton">Address:</span>Address</p>
                     </div>
-                    <div class="col-lg-1"></div>
-                    <div class="col-lg-4">
+                    <div class="col-lg-6 offset-lg-1">
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="form-group">
@@ -174,7 +172,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-1"></div>
                 </div>
             </div>
             
