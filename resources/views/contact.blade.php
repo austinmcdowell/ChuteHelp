@@ -114,17 +114,10 @@
 
                 <div class="row">
                     <div class="col-lg-4 offset-lg-1">
-<<<<<<< HEAD
-                        <p class="contact-us-info"><p>Contact Us Paragraph</p></p>
-                        <p><span class="anton">Phone:</span>Phone</p>
-                        <p><span class="anton">Email:</span>Email</p>
-                        <p><span class="anton">Address:</span>Address</p>
-=======
                         <p class="contact-us-info"><p>{{ $page->data['contactCardDescription'] }}</p></p>
                         <p><span class="anton">Phone:</span>{{ $page->data['phoneNumberField'] }}</p>
                         <p><span class="anton">Email:</span>{{ $page->data['emailAddressField'] }}</p>
                         <p><span class="anton">Address:</span>{{ $page->data['addressField'] }}</p>
->>>>>>> 643d8f722a66b9f80bf8dfcb918a80d103a68c4c
                     </div>
                     <div class="col-lg-6 offset-lg-1">
                         <div class="row">
