@@ -20,6 +20,9 @@
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
 
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+
 
         <!-- Styles -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css">
@@ -32,7 +35,7 @@
     <body>
         <div class="background-image" style="background-image: url('{{ asset('img/bck-dark.jpg') }}')">
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark chute-nav">
-                <a href="#" class="navbar-brand">CHUTEHELP</a>
+                <a href="#" class="navbar-brand"><i>CHUTE HELP</i></a>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -48,7 +51,7 @@
                             <a class="nav-link" href="#">Store</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Retailers</a>
+                            <a class="nav-link" href="#">Find A Retailer</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/contact">Contact</a>
@@ -57,7 +60,7 @@
                 </div>
             </nav>
 
-            <img src="{{ asset('img/chute-help-logo.png') }}" class="img-fluid chute-logo-launch" alt="Responsive image">
+            <img src="{{ asset('img/chute-help-logo-white.png') }}" class="img-fluid chute-logo-launch" alt="Responsive image">
         </div>
 
         <div class="container-fluid">
@@ -122,7 +125,7 @@
                 <div class="col-lg-4 col-sm-12">
                     <div class="card">
                         <img class="card-img-top" src="{{ $page->assets['productFeatureImage1'] }}" alt="Card image cap">
-                        <div class="card-body">
+                        <div class="card-body" align="left">
                             <div class="card-title-div">
                                 <h5 class="card-title">{{ $page->data['productFeature1title'] }}</h5>
                             </div>
@@ -130,35 +133,61 @@
                             <p class="card-text">{{ $page->data['productFeature1description'] }}</p>
                             
                         </div>
-                        <a href="{{ $page->data['productFeature1storePageUrl'] }}" class="btn btn-primary visit-store-button">Visit Store</a>
+                        <div class="row">
+                            <div class="col-sm-4 col-lg-4">
+                                <p class="product-category secondary-product-label">product</p>
+                            </div>
+                            <div class="col-sm-4 col-lg-4 offset-lg-3">
+                                <a href="{{ $page->data['productFeature1storePageUrl'] }}" class="btn btn-primary visit-store-button">Visit Store</a>
+                            </div>
+                        </div>
+                        
                     </div>
                 </div>
 
                 <div class="col-lg-4 col-sm-12">
                     <div class="card">
                         <img class="card-img-top" src="{{ $page->assets['productFeatureImage2'] }}" alt="Card image cap">
-                        <div class="card-body">
+                        <div class="card-body" align="left">
                             <div class="card-title-div">
                                 <h5 class="card-title">{{ $page->data['productFeature2title'] }}</h5>
                             </div>
                             <p class="card-text">{{ $page->data['productFeature2description'] }}</p>
                             
                         </div>
-                        <a href="{{ $page->data['productFeature2storePageUrl'] }}" class="btn btn-primary visit-store-button">Visit Store</a>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <p class="product-category secondary-product-label">product</p>
+                            </div>
+                            <div class="col-lg-4 offset-lg-3">
+
+                                <a href="{{ $page->data['productFeature2storePageUrl'] }}" class="btn btn-primary visit-store-button">Visit Store</a>
+                            </div>
+                        </div>
+                        
                     </div>
                 </div>
 
                 <div class="col-lg-4 col-sm-12">
                     <div class="card">
                         <img class="card-img-top" src="{{ $page->assets['productFeatureImage3'] }}" alt="Card image cap">
-                        <div class="card-body">
+                        <div class="card-body" align="left">
                             <div class="card-title-div">
                                 <h5 class="card-title">{{ $page->data['productFeature3title'] }}</h5>
                             </div>
                             <p class="card-text">{{ $page->data['productFeature3description'] }}</p>
                             
                         </div>
-                        <a href="{{ $page->data['productFeature3storePageUrl'] }}" class="btn btn-primary visit-store-button" align="center">Visit Store</a>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <p class="product-category secondary-product-label">product</p>
+                            </div>
+                            <div class="col-lg-4 offset-lg-3">
+                                <a href="{{ $page->data['productFeature3storePageUrl'] }}" class="btn btn-primary visit-store-button" align="center">Visit Store</a>
+                            </div>
+                        </div>
+                        
+                        
                     </div>
                 </div>
                 
@@ -168,7 +197,7 @@
         <div class="container-fluid information" align="center">
             <div class="row">
                 <div class="col-sm-12 col-lg-4">
-                    <img src="" alt="" class="chute-icon">
+                    <i class="fa fa-book small-icon fa-2x" aria-hidden="true" align="center"></i>
                     <div class="info-links">
                         <h2>Learn About Us</h2>
                         <p>{{ $page->data['learnAboutUs'] }}</p>
@@ -177,7 +206,7 @@
                 </div>
                 
                 <div class="col-sm-12 col-lg-4">
-                    <img src="" alt="" class="chute-icon">
+                <i class="fa fa-archive fa-2x small-icon" aria-hidden="true"></i>
                     <div class="info-links">
                         <h2>Our Products</h2>
                         <p>{{ $page->data['ourProducts'] }}</p>
@@ -186,7 +215,7 @@
                 </div>
 
                 <div class="col-sm-12 col-lg-4">
-                    <img src="" alt="" class="chute-icon">
+                    <i class="fa fa-building fa-2x small-icon" aria-hidden="true"></i>
                     <div class="info-links">
                         <h2>Find A Retailer</h2>
                         <p>{{ $page->data['findARetailer'] }}</p>
