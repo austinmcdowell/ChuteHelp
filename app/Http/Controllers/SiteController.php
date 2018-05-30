@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Page;
+use App\Retailer;
+
 use Illuminate\Http\Request;
 
 class SiteController extends Controller
@@ -25,6 +27,14 @@ class SiteController extends Controller
         $page = Page::where('title', 'contact')->first();
         return view('contact', [
             'page' => $page
+        ]);
+    }
+
+    public function retailers()
+    {
+        $retailers = Retailer::get();
+        return view('retailers', [
+            'retailers' => $retailers
         ]);
     }
 
