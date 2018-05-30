@@ -13,6 +13,7 @@
 
 
 Route::get('/', 'SiteController@index');
+Route::get('/retailers', 'SiteController@retailers');
 Route::get('/contact', 'SiteController@contact');
 Route::post('/contact', 'SiteController@send_email');
 
