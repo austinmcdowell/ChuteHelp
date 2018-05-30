@@ -26,7 +26,7 @@
         <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css">
 
         <!-- JS -->
-        <!-- <script src="{{ asset('js/app.js') }}"></script> -->
+        <script src="{{ asset('js/site.js') }}"></script>
 
     </head>
     <body>
@@ -120,62 +120,147 @@
                         <p><span class="anton">Address: </span>{{ $page->data['addressField'] }}</p>
                     </div>
                     <div class="col-lg-6 offset-lg-1">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <label for="form_name">Firstname *</label>
-                                    <input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter your firstname *" required="required" data-error="Firstname is required.">
-                                    <div class="help-block with-errors"></div>
+                        <form action="/contact" method="POST">
+                            @csrf
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label for="form_name">Firstname *</label>
+                                        <input id="form_name" type="text" name="firstname" class="form-control" placeholder="Please enter your firstname *" required="required" data-error="Firstname is required.">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label for="form_lastname">Lastname *</label>
+                                        <input id="form_lastname" type="text" name="lastname" class="form-control" placeholder="Please enter your lastname *" required="required" data-error="Lastname is required.">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <label for="form_lastname">Lastname *</label>
-                                    <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Please enter your lastname *" required="required" data-error="Lastname is required.">
-                                    <div class="help-block with-errors"></div>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="form_email">Email *</label>
-                                    <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your email *" required="required" data-error="Valid email is required.">
-                                    <div class="help-block with-errors"></div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="form_email">Email *</label>
+                                        <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your email *" required="required" data-error="Valid email is required.">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="form_phone">Phone</label>
+                                        <input id="form_phone" type="tel" name="phone" class="form-control" placeholder="Please enter your phone">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="form_phone">Phone</label>
-                                    <input id="form_phone" type="tel" name="phone" class="form-control" placeholder="Please enter your phone">
-                                    <div class="help-block with-errors"></div>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label for="form_message">Message *</label>
-                                    <textarea id="form_message" name="message" class="form-control" placeholder="Message for me *" rows="4" required="required" data-error="Please,leave us a message."></textarea>
-                                    <div class="help-block with-errors"></div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="form_message">Message *</label>
+                                        <textarea id="form_message" name="message" class="form-control" placeholder="Message for me *" rows="4" required="required" data-error="Please,leave us a message."></textarea>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-md-12">
-                                <input type="submit" class="btn btn-success btn-send" value="Send message">
+
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        <label for="form_zipcode">Zip Code *</label>
+                                        <input id="form_zipcode" type="number" name="zipcode" class="form-control" placeholder="Zip code *" required="required" data-error="Zip code is required.">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-7">
+                                    <div class="form-group">
+                                        <div class="form-check">
+                                            <input class="form-check-input" name="becomeRetailer" type="checkbox" id="becomeRetailer">
+                                            <label class="form-check-label" for="becomeRetailer">
+                                                I want to be a retailer.
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" name="ropingEquipment" type="checkbox" id="ropingEquipment">
+                                            <label class="form-check-label" for="ropingEquipment">
+                                                I'm interested in roping equipment.
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" name="cattleEquipment" type="checkbox" id="cattleEquipment">
+                                            <label class="form-check-label" for="cattleEquipment">
+                                                I'm interested in cattle equipment.
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" name="easyNowProducts" type="checkbox" id="easyNowProducts">
+                                            <label class="form-check-label" for="easyNowProducts">
+                                                I'm interested in easy now products.
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <p class="text-muted"><strong>*</strong> These fields are required.</p>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <input type="submit" class="btn btn-success btn-send" value="Send message">
+                                </div>
                             </div>
-                        </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p class="text-muted"><strong>*</strong> These fields are required.</p>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
             
         </div>
-        
+
+        <script>
+            var becomeRetailer = $('#becomeRetailer');
+            becomeRetailer.on('change', function() {
+                if (this.checked) {
+                    alert('A storefront is required, and opening order minimums apply!');
+                }
+            });
+        </script>
+
+        <script type="text/javascript">
+            adroll_adv_id = "NRRMMNGCSBCYVPPUA5AWLU";
+            adroll_pix_id = "W5RZYIEWAVASNDVETP7O2J";
+            /* OPTIONAL: provide email to improve user identification */
+            /* adroll_email = "username@example.com"; */
+            (function () {
+                var _onload = function(){
+                    if (document.readyState && !/loaded|complete/.test(document.readyState)){setTimeout(_onload, 10);return}
+                    if (!window.__adroll_loaded){__adroll_loaded=true;setTimeout(_onload, 50);return}
+                    var scr = document.createElement("script");
+                    var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+                    scr.setAttribute('async', 'true');
+                    scr.type = "text/javascript";
+                    scr.src = host + "/j/roundtrip.js";
+                    ((document.getElementsByTagName('head') || [null])[0] ||
+                        document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+                };
+                if (window.addEventListener) {window.addEventListener('load', _onload, false);}
+                else {window.attachEvent('onload', _onload)}
+            }());
+        </script>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-41915592-2"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-41915592-2');
+        </script>
     </body>
 </html>

@@ -14,7 +14,7 @@
 
 Route::get('/', 'SiteController@index');
 Route::get('/contact', 'SiteController@contact');
-
+Route::post('/contact', 'SiteController@send_email');
 
 Auth::routes();
 
