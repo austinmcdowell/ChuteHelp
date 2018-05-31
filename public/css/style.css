@@ -73,10 +73,6 @@ button {
 }
 
 @media (min-width: 1200px) {
-  .chute-logo-launch {
-    margin: 0 0 0 35%;
-  }
-
   .left {
     -webkit-box-ordinal-group: 3;
         -ms-flex-order: 2;
@@ -112,11 +108,44 @@ button {
   font-family: 'Montserrat' !important;
 }
 
+.cover-information {
+  height: 500px;
+  margin: 2% 0 0 5%;
+}
+
 .chute-logo-launch {
   position: relative !important;
-  width: 30%;
-  height: 30%;
-  margin: 5% 0 100px 35%;
+  width: 35%;
+  height: auto;
+  margin: 6% 0 5% 32.5%;
+}
+
+.chute-site-title {
+  margin: 5% 0 4% 2%;
+  color: white !important;
+  font-size: 55px !important;
+}
+
+.chute-site-description {
+  margin: 0 0 4% 2%;
+  color: white !important;
+  font-size: 19px;
+  font-family: 'Nunito Sans' !important;
+}
+
+.chute-site-store-button {
+  width: 100px !important;
+  height: 35px !important;
+  margin: 0 0 0 2%;
+  padding: 1.5% 4%;
+  line-height: 35px;
+  vertical-align: middle;
+  color: white;
+  background: green;
+  border: 1px solid green;
+  border-radius: 3px;
+  font-family: 'Nunito Sans' !important;
+  font-size: 15px;
 }
 
 .launch-description {

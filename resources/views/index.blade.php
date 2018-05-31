@@ -14,7 +14,6 @@
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Nunito+Sans" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -63,11 +62,11 @@
             <img src="{{ asset('img/chute-help-logo-white.png') }}" class="img-fluid chute-logo-launch" alt="Responsive image">
         </div>
 
-        <div class="container-fluid">
+        <!-- <div class="container-fluid">
             <div class="row launch-description">
                 <p align="center">{{ $page->data['siteDescription'] }}</p>
             </div>
-        </div>
+        </div> -->
 
         <div class="container-fluid">
             <div class="row main-product">

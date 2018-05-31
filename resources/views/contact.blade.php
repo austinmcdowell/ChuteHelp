@@ -35,7 +35,7 @@
         <!-- LAUNCH VIDEO/IMAGE -->
         <div class="background-image" style="background-image: url('{{ asset('img/bck-dark.jpg') }}')">
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark chute-nav">
-                <a href="#" class="navbar-brand">CHUTEHELP</a>
+                <a href="#" class="navbar-brand"><i>CHUTE HELP</i></a>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -45,13 +45,13 @@
                 <div class="collapse navbar-collapse ml-auto" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Store</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Retailers</a>
+                            <a class="nav-link" href="/retailers">Find A Retailer</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/contact">Contact</a>
@@ -60,7 +60,7 @@
                 </div>
             </nav>
 
-            <img src="{{ asset('img/chute-help-logo.png') }}" class="img-fluid chute-logo-launch" alt="Responsive image">
+            <img src="{{ asset('img/chute-help-logo-white.png') }}" class="img-fluid chute-logo-launch" alt="Responsive image">
         </div>
 
         <div class="row newsletter">
