@@ -68,14 +68,18 @@
                 <p>{{ $page->data['emailHelper'] }}</p>
             </div>
             <div class="col-sm-8 col-md-8 col-lg-6">
-                <div class="form-group email-newsletter">
-                    <!-- <label for="form_email">Email *</label> -->
-                    <input id="form_email" type="email" name="email" class="form-control email-news-form" placeholder="Email *" required="required" data-error="Valid email is required.">
-                    <div class="help-block with-errors"></div>
-                </div>
-            </div>
-            <div class="col-sm-3 col-lg-3" align="center">
-                <input type="submit" class="btn btn-success btn-send newsletter-button" value="Sign Up">
+                <form method="post" name="signup" action="https://app.e2ma.net/app2/audience/signup/1787030/1752144/?v=a">
+                    <div class="col-sm-8 col-md-8 col-lg-6">
+                        <div class="form-group email-newsletter">
+                            <!-- <label for="form_email">Email *</label> -->
+                            <input id="form_email" type="email" name="email" class="form-control email-news-form" placeholder="Email *" required="required" data-error="Valid email is required.">
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 col-lg-3" align="center">
+                        <input type="submit" class="btn btn-success btn-send newsletter-button" value="Sign Up">
+                    </div>
+                </form>
             </div>
         </div>
 
