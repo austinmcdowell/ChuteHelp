@@ -6,5 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Location extends Model
 {
-    //
+    public function retailer()
+    {
+        return $this->belongsTo('\App\Retailer');
+    }
 }

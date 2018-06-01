@@ -14,6 +14,7 @@
 
 Route::get('/', 'SiteController@index');
 Route::get('/retailers', 'SiteController@retailers');
+Route::get('/retailers/search', 'SiteController@retailer_search');
 Route::get('/contact', 'SiteController@contact');
 Route::post('/contact', 'SiteController@send_email');
 

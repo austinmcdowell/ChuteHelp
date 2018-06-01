@@ -69,6 +69,46 @@
                     <h1 class="retailer-header">Retailers</h1>
                 </div>
             </div>
+            <div class="row">
+                @if(isset($form_message))
+                <p>{{ $form_message }}</p>
+                @endif
+                @if(isset($error))
+                <p>Something went wrong. You can contact us <a href="/contact">here</a> and we'll help you out as soon as possible!</p>
+                @endif
+                <form method="GET" action="/retailers/search">
+                    <div class="form-group">
+                        <input class="form-control" type="number" name="zipCode" placeholder="Zip Code">
+                        <label for="zipCode">Zip Code</label>
+                    </div>
+                    <div class="form-group">
+                        <select class="form-control" name="distance">
+                            <option value="5" selected>5 Miles</option>
+                            <option value="10">10 Miles</option>
+                            <option value="25">25 Miles</option>
+                            <option value="50">50 Miles</option>
+                            <option value="100">100 Miles</option>
+                            <option value="250">250 Miles</option>
+                        </select>
+                        <label for="zipCode">Zip Code</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" />
+                    </div>
+                </form>
+            </div>
+            @if(isset($no_results))
+            <p>There were no locations found.</p>
+            @endif
+
+            @if(isset($locations))
+            <div class="row locations">
+                @foreach($locations as $location)
+                <p>{{ $location->address }}</p>
+                @endforeach
+            </div>
+            @endif
+            
             <div class="row retailers">
                 @foreach($retailers as $retailer)
                 <div class="col-sm-12 col-md-4 text-center retailer">
