@@ -64,20 +64,20 @@
         </div>
 
         <div class="row newsletter">
-            <div class="col-sm-12 col-lg-3 newsletter-signup-title" align="center">
-                <p>{{ $page->data['emailHelper'] }}</p>
+            <div class="col-sm-12 col-lg-12 newsletter-signup-title" align="center">
+                <h2>{{ $page->data['emailHelper'] }}</h2>
             </div>
-            <div class="col-sm-8 col-md-8 col-lg-8">
+            <div class="col-sm-12 col-md-8 col-lg-8 offset-lg-2">
                 <form method="post" name="signup" action="https://app.e2ma.net/app2/audience/signup/1787030/1752144/?v=a">
                     <div class="row">
-                        <div class="col-sm-8 col-md-8 col-lg-9">
+                        <div class="col-sm-12 col-md-8 col-lg-8 offset-lg-1">
                             <div class="form-group email-newsletter">
                                 <!-- <label for="form_email">Email *</label> -->
                                 <input id="form_email" type="email" name="email" class="form-control email-news-form" placeholder="Email *" required="required" data-error="Valid email is required.">
                                 <div class="help-block with-errors"></div>
                             </div>
                         </div>
-                        <div class="col-sm-3 col-lg-3" align="center">
+                        <div class="col-sm-12 col-lg-3" align="center">
                             <input type="submit" class="btn btn-success btn-send newsletter-button" value="Sign Up">
                         </div>
                     </div>
@@ -86,9 +86,9 @@
         </div>
 
         <div class="row contact-desc-title" align="center">
-            <div class="col-lg-12">
+            <!-- <div class="col-lg-12">
                 <h1 align="center">{{ $page->data['sectionHeader'] }}</h1>
-            </div>
+            </div> -->
             <div class="col-lg-12">
                 <h2 align="center">{{ $page->data['sectionDescription'] }}</h2>
             </div>
