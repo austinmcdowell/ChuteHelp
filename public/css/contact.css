@@ -83,22 +83,6 @@ body {
   font-size: 14px;
 }
 
-.newsletter {
-  margin: 0 0 5% 0;
-  padding: 2% 0 2% 0;
-  height: auto;
-  width: 100%;
-  background: #323232;
-  color: white;
-  z-index: 20;
-  position: relative;
-}
-
-.newsletter-signup-title {
-  font-size: 60px !important;
-  color: white !important;
-}
-
 .newsletter-title {
   margin: 0 0 5% 0;
   padding: .5% 0 0 0;
@@ -132,11 +116,6 @@ body {
 
 .email-news-form {
   width: 100% !important;
-  margin: 10px 0 0 0;
-}
-
-.newsletter-button {
-  width: 50% !important;
   margin: 10px 0 0 0;
 }
 
