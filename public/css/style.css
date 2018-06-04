@@ -315,3 +315,37 @@ button {
   height: 60px;
 }
 
+.form-well-button {
+  width: 50% !important;
+  margin: 10px 0 0 0;
+}
+
+.form-well {
+  margin: 0 0 5% 0;
+  padding: 2% 0 2% 0;
+  height: auto;
+  width: 100%;
+  background: #323232;
+  color: white;
+  z-index: 20;
+  position: relative;
+}
+
+.form-well-header {
+  font-size: 60px !important;
+  color: white !important;
+}
+
+.locations {
+  max-width: 640px;
+}
+
+.locations .location {
+  border-bottom: 1px solid #ccc;
+}
+
+.locations .location .logo {
+  max-width: 64px;
+  margin-top: 15px;
+}
+

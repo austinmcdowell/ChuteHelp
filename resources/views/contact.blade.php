@@ -107,8 +107,8 @@
             <img src="{{ asset('img/chute-help-logo-white.png') }}" class="img-fluid chute-logo-launch" alt="Responsive image">
         </div>
 
-        <div class="row newsletter">
-            <div class="col-sm-12 col-lg-12 newsletter-signup-title" align="center">
+        <div class="row form-well">
+            <div class="col-sm-12 col-lg-12 form-well-header" align="center">
                 <h2>{{ $page->data['emailHelper'] }}</h2>
             </div>
             <div class="col-sm-12 col-md-8 col-lg-8 offset-lg-2">
@@ -122,7 +122,7 @@
                             </div>
                         </div>
                         <div class="col-sm-12 col-lg-3" align="center">
-                            <input type="submit" class="btn btn-success btn-send newsletter-button" value="Sign Up">
+                            <input type="submit" class="btn btn-success btn-send form-well-button" value="Sign Up">
                         </div>
                     </div>
                 </form>
