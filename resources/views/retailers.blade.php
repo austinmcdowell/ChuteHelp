@@ -107,9 +107,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/contact">Contact</a>
                         </li>
-                        <li><a href="#" class="fa fa-facebook sm-link" align="center"></a></li>
-                        <li><a href="#" class="fa fa-instagram sm-link" align="center"></a></li>
-                        <li><a href="#" class="fa fa-youtube sm-link" align="center"></a></li>
+                        <li><a href="https://www.facebook.com/ChuteHelp/" class="fa fa-facebook sm-link" align="center"></a></li>
+                        <li><a href="https://www.instagram.com/chutehelpinc/" class="fa fa-instagram sm-link" align="center"></a></li>
+                        <li><a href="https://www.youtube.com/user/TheChuteHelp" class="fa fa-youtube sm-link" align="center"></a></li>
                     </ul>
                 </div>
             </nav>
