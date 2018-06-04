@@ -104,7 +104,7 @@
                             <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Store</a>
+                            <a class="nav-link" href="http://chute-help.mybigcommerce.com/">Store</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/retailers">Find A Retailer</a>

@@ -36,7 +36,7 @@ class SiteController extends Controller
 
     public function retailers()
     {
-        $retailers = Retailer::get();
+        $retailers = Retailer::orderBy('rank', 'desc')->get();;
         return view('retailers', [
             'retailers' => $retailers
         ]);
@@ -47,7 +47,7 @@ class SiteController extends Controller
         $zip_code  = $request->query('zipCode');
         $distance  = $request->query('distance');
         $client    = new Client();
-        $retailers = Retailer::get();
+        $retailers = Retailer::orderBy('rank', 'desc')->get();;
 
         if (!$zip_code) {
             return view('retailers', [
@@ -86,26 +86,24 @@ class SiteController extends Controller
     {
         $firstname = $request->input('firstname');
         $lastname  = $request->input('lastname');
+        $name = $firstname . ' ' . $lastname;
         $email     = $request->input('email');
         $phone     = $request->input('phone');
         $message   = $request->input('message');
         $zip_code  = $request->input('zipcode');
-        $become_retailer   = ($request->input('becomeRetailer') ? true : false);
-        $roping_equipment  = ($request->input('ropingEquipment') ? true : false);
-        $cattle_equipment  = ($request->input('cattleEquipment') ? true : false);
-        $easy_now_products = ($request->input('easyNowProducts') ? true : false);
+        $become_retailer   = $request->input('becomeRetailer');
+        $roping_equipment  = $request->input('ropingEquipment');
+        $cattle_equipment  = $request->input('cattleEquipment');
+        $easy_now_products = $request->input('easyNowProducts');
 
-        return json_encode([
-            'firstname' => $firstname,
-            'lastname' => $lastname,
-            'email' => $email,
-            'phone' => $phone,
-            'message' => $message,
-            'zipcode' => $zip_code,
-            'become_retailer' => $become_retailer,
-            'roping_equipment' => $roping_equipment,
-            'cattle_equipment' => $cattle_equipment,
-            'easy_now_products' => $easy_now_products
-        ]);
+        $message_body = "Name: {$name}\nEmail: {$email}\nPhone: {$phone}\nZip Code: {$zip_code}\n\nInterested in becoming a retailer? {$become_retailer}\nInterested in roping equipment? {$roping_equipment}\nInterested in cattle equipment? {$cattle_equipment}\nInterested in easy now products? {$easy_now_products}\n\n{$message}";
+
+        Mail::raw($message_body, function($message) {
+            $message->subject('');
+            $message->from('no-reply@website_name.com', 'Website Name');
+            $message->to('info@chutehelp.com');
+        });
+
+        return redirect('/');
     }
 }
