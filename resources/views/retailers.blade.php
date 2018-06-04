@@ -21,6 +21,7 @@
 
 
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
 
@@ -31,11 +32,61 @@
         <!-- JS -->
         <!-- <script src="{{ asset('js/app.js') }}"></script> -->
 
+        <style>
+        .fa-facebook {
+            height: 30px;
+            width: 30px;
+
+            line-height: 30px;
+            vertical-align: middle;
+
+            color: white;
+
+            border-radius: 50%;
+            margin: 2% !important;
+        }
+
+        .fa-instagram {
+            height: 30px;
+            width: 30px;
+
+            line-height: 30px;
+            vertical-align: middle;
+
+            color: white;
+
+            border-radius: 50%;
+            margin: 2% !important;
+        }
+
+        .fa-youtube {
+            height: 30px;
+            width: 30px;
+
+            line-height: 30px;
+            vertical-align: middle;
+
+            color: white;
+
+            border-radius: 50%;
+            margin: 2% !important;
+        }
+
+        .sm-link {
+            margin: 5px 7px !important;
+            background: rgb(100, 220, 140);
+        }
+
+        .sm-link:hover {
+            color: white !important;
+            text-decoration: none;
+        }
+        </style>
     </head>
     <body>
         <div class="background-image" style="background-image: url('{{ asset('img/bck-dark.jpg') }}')">
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark chute-nav">
-                <a href="#" class="navbar-brand"><i>CHUTE HELP</i></a>
+                <a href="/" class="navbar-brand"><i>CHUTE HELP</i></a>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -44,18 +95,21 @@
 
                 <div class="collapse navbar-collapse ml-auto" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active">
+                        <li class="nav-item">
                             <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Store</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item active">
                             <a class="nav-link" href="/retailers">Find A Retailer</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/contact">Contact</a>
                         </li>
+                        <li><a href="#" class="fa fa-facebook sm-link" align="center"></a></li>
+                        <li><a href="#" class="fa fa-instagram sm-link" align="center"></a></li>
+                        <li><a href="#" class="fa fa-youtube sm-link" align="center"></a></li>
                     </ul>
                 </div>
             </nav>

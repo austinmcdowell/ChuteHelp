@@ -60,8 +60,22 @@
             margin: 2% !important;
         }
 
+        .fa-youtube {
+            height: 30px;
+            width: 30px;
+
+            line-height: 30px;
+            vertical-align: middle;
+
+            color: white;
+
+            border-radius: 50%;
+            margin: 2% !important;
+        }
+
         .sm-link {
-            margin: 5px !important;
+            margin: 5px 7px !important;
+            background: rgb(100, 220, 140);
         }
 
         .sm-link:hover {
@@ -100,6 +114,7 @@
                         </li>
                         <li><a href="#" class="fa fa-facebook sm-link" align="center"></a></li>
                         <li><a href="#" class="fa fa-instagram sm-link" align="center"></a></li>
+                        <li><a href="#" class="fa fa-youtube sm-link" align="center"></a></li>
                     </ul>
                 </div>
             </nav>
