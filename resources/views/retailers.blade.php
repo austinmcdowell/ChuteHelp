@@ -99,7 +99,7 @@
                             <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Store</a>
+                            <a class="nav-link" href="http://chute-help.mybigcommerce.com/">Store</a>
                         </li>
                         <li class="nav-item active">
                             <a class="nav-link" href="/retailers">Find A Retailer</a>
@@ -107,9 +107,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/contact">Contact</a>
                         </li>
-                        <li><a href="#" class="fa fa-facebook sm-link" align="center"></a></li>
-                        <li><a href="#" class="fa fa-instagram sm-link" align="center"></a></li>
-                        <li><a href="#" class="fa fa-youtube sm-link" align="center"></a></li>
+                        <li><a href="https://www.facebook.com/ChuteHelp/" class="fa fa-facebook sm-link" align="center"></a></li>
+                        <li><a href="https://www.instagram.com/chutehelpinc/" class="fa fa-instagram sm-link" align="center"></a></li>
+                        <li><a href="https://www.youtube.com/user/TheChuteHelp" class="fa fa-youtube sm-link" align="center"></a></li>
                     </ul>
                 </div>
             </nav>
