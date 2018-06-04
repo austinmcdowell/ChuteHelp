@@ -27,6 +27,17 @@
                                     v-model="website"
                                     ></b-form-input>
                             </b-form-group>
+                            <b-form-group 
+                                label="Retailer Rank"
+                                label-for="retaileRank">
+                                <b-form-input 
+                                    id="retailerRank"
+                                    type="number"
+                                    required
+                                    placeholder="Retailer Rank"
+                                    v-model="rank"
+                                    ></b-form-input>
+                            </b-form-group>
                             <div class="form-group">
                                 <img :src="logoSrc" />
                                 <label for="logoUpload">Upload Logo</label>
@@ -114,6 +125,7 @@ export default {
             this.website = window.retailer.website;
             this.logoSrc = window.retailer.logo_url;
             this.locations = window.retailer.locations;
+            this.rank = window.retailer.rank;
         }
     },
     data() {
@@ -123,6 +135,7 @@ export default {
             website: '',
             logoSrc: '',
             logo: null,
+            rank: 0,
             locations: [],
             states: ['AK','AL','AR','AZ','CA','CO','CT','DC','DE','FL','GA','HI','IA','ID','IL','IN','KS','KY','LA','MA', 'MD','ME','MI','MN','MO','MS','MT','NC','ND','NE','NH','NJ','NM','NV','NY','OH','OK','OR','PA','RI','SC','SD','TN','TX','UT','VA','VT','WA','WI','WV','WY']
         }
@@ -150,6 +163,7 @@ export default {
                 state: '',
                 zip_code: '',
                 phone: '',
+                rank: 0,
                 shouldShow: true,
                 newlyAdded: true
             });
@@ -177,6 +191,7 @@ export default {
             
             form.append('name', this.name);
             form.append('website', this.website);
+            form.append('rank', parseInt(this.rank));
             
             if (this.logo) {
                 form.append('logo', this.logo)
@@ -185,7 +200,7 @@ export default {
             form.append('locations', JSON.stringify(this.locations));
 
             axios.post('/admin/retailer/save', form).then(response => {
-                //window.location = '/admin/retailers';
+                window.location = '/admin/retailers';
             }).catch(e => {
                 alert('There was an error, please contact support.');
             });

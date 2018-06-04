@@ -17,7 +17,7 @@ class RetailerController extends Controller
     
     public function index()
     {
-        $retailers = Retailer::get();
+        $retailers = Retailer::orderBy('rank', 'desc')->get();
         return view('admin.retailers.index', [
             'retailers' => $retailers
         ]);
@@ -50,6 +50,7 @@ class RetailerController extends Controller
 
         $retailer->name = $request->input('name');
         $retailer->website = $request->input('website');
+        $retailer->rank = $request->input('rank');
 
         if ($request->file('logo')) {
             $file = $request->file('logo');

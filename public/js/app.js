@@ -66433,6 +66433,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     mounted: function mounted() {
@@ -66442,6 +66453,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.website = window.retailer.website;
             this.logoSrc = window.retailer.logo_url;
             this.locations = window.retailer.locations;
+            this.rank = window.retailer.rank;
         }
     },
     data: function data() {
@@ -66451,6 +66463,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             website: '',
             logoSrc: '',
             logo: null,
+            rank: 0,
             locations: [],
             states: ['AK', 'AL', 'AR', 'AZ', 'CA', 'CO', 'CT', 'DC', 'DE', 'FL', 'GA', 'HI', 'IA', 'ID', 'IL', 'IN', 'KS', 'KY', 'LA', 'MA', 'MD', 'ME', 'MI', 'MN', 'MO', 'MS', 'MT', 'NC', 'ND', 'NE', 'NH', 'NJ', 'NM', 'NV', 'NY', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VA', 'VT', 'WA', 'WI', 'WV', 'WY']
         };
@@ -66479,6 +66492,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 state: '',
                 zip_code: '',
                 phone: '',
+                rank: 0,
                 shouldShow: true,
                 newlyAdded: true
             });
@@ -66506,6 +66520,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             form.append('name', this.name);
             form.append('website', this.website);
+            form.append('rank', parseInt(this.rank));
 
             if (this.logo) {
                 form.append('logo', this.logo);
@@ -66514,7 +66529,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             form.append('locations', JSON.stringify(this.locations));
 
             axios.post('/admin/retailer/save', form).then(function (response) {
-                //window.location = '/admin/retailers';
+                window.location = '/admin/retailers';
             }).catch(function (e) {
                 alert('There was an error, please contact support.');
             });
@@ -66599,6 +66614,34 @@ var render = function() {
                             _vm.website = $$v
                           },
                           expression: "website"
+                        }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "b-form-group",
+                    {
+                      attrs: {
+                        label: "Retailer Rank",
+                        "label-for": "retaileRank"
+                      }
+                    },
+                    [
+                      _c("b-form-input", {
+                        attrs: {
+                          id: "retailerRank",
+                          type: "number",
+                          required: "",
+                          placeholder: "Retailer Rank"
+                        },
+                        model: {
+                          value: _vm.rank,
+                          callback: function($$v) {
+                            _vm.rank = $$v
+                          },
+                          expression: "rank"
                         }
                       })
                     ],
