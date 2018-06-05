@@ -287,6 +287,12 @@
             
         </div>
 
+        <div class="container-fluid">
+            <div class="row footer">
+                <p>CHUTEHELP All Rights Reserved 2018</p>
+            </div>
+        </div>
+
         <script>
             var becomeRetailer = $('#becomeRetailer');
             becomeRetailer.on('change', function() {
