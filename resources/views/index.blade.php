@@ -7,7 +7,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>ChuteHelp</title>
+        <title>ChuteHelp - Home</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -99,7 +99,7 @@
                             <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="http://chute-help.mybigcommerce.com/">Store</a>
+                            <a class="nav-link" href="https://store.chutehelp.com/">Store</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/retailers">Find A Retailer</a>
