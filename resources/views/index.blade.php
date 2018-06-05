@@ -280,7 +280,9 @@
         </div>
 
         <div class="container-fluid">
-            <div class="row footer"></div>
+            <div class="row footer">
+                <p>CHUTEHELP All Rights Reserved 2018</p>
+            </div>
         </div>
         <script type="text/javascript">
             adroll_adv_id = "NRRMMNGCSBCYVPPUA5AWLU";

@@ -179,7 +179,6 @@
 
                 <div class="row">
                     <div class="col-lg-4 offset-lg-1">
-                        <p class="contact-us-info"><p>{{ $page->data['contactCardDescription'] }}</p></p>
                         <p><span class="anton">Phone: </span>{{ $page->data['phoneNumberField'] }}</p>
                         <p><span class="anton">Email: </span><a href="mailto:{{ $page->data['emailAddressField'] }}">{{ $page->data['emailAddressField'] }}</a></p>
                         <p><span class="anton">Address: </span>{{ $page->data['addressField'] }}</p>
@@ -285,6 +284,12 @@
                 </div>
             </div>
             
+        </div>
+
+        <div class="container-fluid">
+            <div class="row footer">
+                <p>CHUTEHELP All Rights Reserved 2018</p>
+            </div>
         </div>
 
         <script>
