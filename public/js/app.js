@@ -65865,14 +65865,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     methods: {
         onSubmit: function onSubmit() {
-            var payload = {
-                title: 'contact',
-                data: {}
-            };
+            var form = new FormData();
+            var title = 'contact';
+            var data = {};
 
-            Object.assign(payload.data, this.$data);
+            Object.assign(data, this.$data);
 
-            axios.post('/admin/save', payload).then(function (response) {
+            form.append('title', title);
+            form.append('data', JSON.stringify(data));
+
+            axios.post('/admin/save', form).then(function (response) {
                 window.location.reload(true);
             }).catch(function (e) {
                 alert('There was an error. Please contact support.');
