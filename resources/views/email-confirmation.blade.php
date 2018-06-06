@@ -6,15 +6,15 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>ChuteHelp - Find A Retailer</title>
+        <meta name="robots" content="noindex">
+        
+        <title>ChuteHelp - Home</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Nunito+Sans" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -81,7 +81,8 @@
             color: white !important;
             text-decoration: none;
         }
-        </style>
+</style>
+
     </head>
     <body>
         <div class="background-image" style="background-image: url('{{ asset('img/bck-dark.jpg') }}')">
@@ -95,13 +96,13 @@
 
                 <div class="collapse navbar-collapse ml-auto" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
+                        <li class="nav-item active">
                             <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="https://store.chutehelp.com/">Store</a>
                         </li>
-                        <li class="nav-item active">
+                        <li class="nav-item">
                             <a class="nav-link" href="/retailers">Find A Retailer</a>
                         </li>
                         <li class="nav-item">
@@ -113,89 +114,13 @@
                     </ul>
                 </div>
             </nav>
-
-            <img src="{{ asset('img/chute-help-logo-white.png') }}" class="img-fluid chute-logo-launch" alt="Responsive image">
+            
+            <img src="{{ asset('img/chute-help-logo-white.png') }}" class="img-fluid chute-logo-launch" alt="Responsive image"> -->
         </div>
-
-        <div class="row form-well">
-            <div class="col-sm-12 col-lg-12 form-well-header" align="center">
-                <h2>Find a Retailer</h2>
-            </div>
-            <div class="col-sm-12 col-md-8 col-lg-8 offset-md-2">
-                <form method="GET" action="/retailers/search">
-                    <div class="row">
-                        <div class="col-sm-12 col-lg-4 offset-lg-1">
-                            <div class="form-group">
-                                <input class="form-control" type="number" name="zipCode" placeholder="Zip Code">
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-lg-4">
-                            <div class="form-group email-newsletter">
-                            <div class="form-group">
-                                <select class="form-control" name="distance">
-                                    <option value="5" selected>5 Miles</option>
-                                    <option value="10">10 Miles</option>
-                                    <option value="25">25 Miles</option>
-                                    <option value="50">50 Miles</option>
-                                    <option value="100">100 Miles</option>
-                                    <option value="250">250 Miles</option>
-                                </select>
-                            </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-lg-3" align="center">
-                            <input style="margin: 0" type="submit" class="btn btn-success btn-send form-well-button" value="Search">
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-
-        <div class="container locations">
-            @if(isset($form_message))
-            <p>{{ $form_message }}</p>
-            @endif
-            @if(isset($error))
-            <p>Something went wrong. You can contact us <a href="/contact">here</a> and we'll help you out as soon as possible!</p>
-            @endif
-
-            @if(isset($no_results))
-            <p>There were no locations found.</p>
-            @endif
-
-            @if(isset($locations))
-                <div class="col-sm-12 text-center">
-                    <h1 class="retailer-header">Results</h1>
-                </div>
-                @foreach($locations as $location)
-                <div class="row location" style="border-bottom: 1px solid #ccc">
-                    <div class="col-sm-12 col-md-4 text-center">
-                        <img class="logo" src="{{ $location->retailer->logo_url }}" alt="{{ $location->retailer->name }}" />
-                    </div>
-                    <div class="col-sm-12 col-md-8">
-                        <h2>{{ $location->name }}</h2>
-                        <p>{{ $location->address }}, {{ $location->city }}, {{ $location->state }} {{ $location->zip_code }}</p>
-                        <p>Phone number: {{ $location->phone }}</p>
-                        <p>Website: <a href="{{ $location->retailer->website }}">{{ $location->retailer->website }}</a></p>
-                    </div>
-                </div>
-                @endforeach
-            @endif
-        </div>
-
-        <div class="container">
+        
+        <div class="container text-center">
             <div class="row">
-                <div class="col-sm-12 text-center">
-                    <h1 class="retailer-header">Retailers</h1>
-                </div>
-            </div>
-            <div class="row retailers">
-                @foreach($retailers as $retailer)
-                <div class="col-sm-12 col-md-4 text-center retailer">
-                    <img src="{{ $retailer->logo_url }}" />
-                    <p><a href="{{ $retailer->website }}">{{ $retailer->name }}</a></p>
-                </div>
-                @endforeach
+                <div class="col-sm-12"><h1 class="mt-3">Thank you for subscribing! Please check your email to confirm your subscription.</h1></div>
             </div>
         </div>
 
@@ -204,7 +129,6 @@
                 <p>CHUTEHELP All Rights Reserved 2018</p>
             </div>
         </div>
-        
         <script type="text/javascript">
             adroll_adv_id = "NRRMMNGCSBCYVPPUA5AWLU";
             adroll_pix_id = "W5RZYIEWAVASNDVETP7O2J";

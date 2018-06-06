@@ -6,7 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>ChuteHelp</title>
+        <title>ChuteHelp - Contact Us</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -104,7 +104,7 @@
                             <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="http://chute-help.mybigcommerce.com/">Store</a>
+                            <a class="nav-link" href="https://store.chutehelp.com/">Store</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/retailers">Find A Retailer</a>
@@ -127,7 +127,7 @@
                 <h2>{{ $page->data['emailHelper'] }}</h2>
             </div>
             <div class="col-sm-12 col-md-8 col-lg-8 offset-lg-2">
-                <form method="post" name="signup" action="https://app.e2ma.net/app2/audience/signup/1787030/1752144/?v=a">
+                <form method="post" name="signup" action="https://app.e2ma.net/app2/audience/signup/1876153/1720180/?r=signup">
                     <div class="row">
                         <div class="col-sm-12 col-md-8 col-lg-8 offset-lg-1">
                             <div class="form-group email-newsletter">

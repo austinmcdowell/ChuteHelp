@@ -17,6 +17,9 @@ Route::get('/retailers', 'SiteController@retailers');
 Route::get('/retailers/search', 'SiteController@retailer_search');
 Route::get('/contact', 'SiteController@contact');
 Route::post('/contact', 'SiteController@send_email');
+Route::get('/email-confirmation', 'SiteController@email_confirmation');
+Route::get('/thank-you', 'SiteController@thank_you');
+
 
 Auth::routes();
 

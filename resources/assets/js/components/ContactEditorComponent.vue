@@ -155,14 +155,16 @@
         },
         methods: {
             onSubmit() {
-                let payload = {
-                    title: 'contact',
-                    data: {}
-                };
+                let form = new FormData();
+                let title = 'contact';
+                let data = {};
 
-                Object.assign(payload.data, this.$data);
+                Object.assign(data, this.$data);
 
-                axios.post('/admin/save', payload).then(response => {
+                form.append('title', title);
+                form.append('data', JSON.stringify(data));
+
+                axios.post('/admin/save', form).then(response => {
                     window.location.reload(true);
                 }).catch(e => {
                     alert('There was an error. Please contact support.');
