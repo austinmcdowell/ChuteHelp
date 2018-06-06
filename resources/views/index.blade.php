@@ -265,7 +265,7 @@
                         <h2>Our Products</h2>
                         <p>{{ $page->data['ourProducts'] }}</p>
                     </div>
-                    <a class="btn btn-primary info-button" href="#">Store</a>
+                    <a class="btn btn-primary info-button" href="https://store.chutehelp.com">Store</a>
                 </div>
 
                 <div class="col-sm-12 col-lg-4">
