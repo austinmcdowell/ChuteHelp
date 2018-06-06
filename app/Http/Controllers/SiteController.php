@@ -104,6 +104,16 @@ class SiteController extends Controller
             $message->to('info@chutehelp.com');
         });
 
-        return redirect('/');
+        return redirect('/thank-you');
+    }
+
+    public function email_confirmation()
+    {
+        return view('email-confirmation');
+    }
+
+    public function thank_you()
+    {
+        return view('thank-you');
     }
 }

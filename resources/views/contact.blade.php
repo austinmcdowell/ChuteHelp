@@ -127,7 +127,7 @@
                 <h2>{{ $page->data['emailHelper'] }}</h2>
             </div>
             <div class="col-sm-12 col-md-8 col-lg-8 offset-lg-2">
-                <form method="post" name="signup" action="https://app.e2ma.net/app2/audience/signup/1787030/1752144/?v=a">
+                <form method="post" name="signup" action="https://app.e2ma.net/app2/audience/signup/1876153/1720180/?r=signup">
                     <div class="row">
                         <div class="col-sm-12 col-md-8 col-lg-8 offset-lg-1">
                             <div class="form-group email-newsletter">
