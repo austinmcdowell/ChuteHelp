@@ -15,8 +15,8 @@ return [
     */
 
     'mailgun' => [
-        'domain' => env('mg.chutehelp.com'),
-        'secret' => env('3d2262ccb5d5a173ab7b31fb8e4854a8-b6183ad4-2c99dc8b'),
+        'domain' => 'chutehelp.com',
+        'secret' => '3d2262ccb5d5a173ab7b31fb8e4854a8-b6183ad4-2c99dc8b',
     ],
 
     'ses' => [

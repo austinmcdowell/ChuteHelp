@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Mail;
 use App\Page;
 use App\Retailer;
 use App\Location;
@@ -91,16 +92,16 @@ class SiteController extends Controller
         $phone     = $request->input('phone');
         $message   = $request->input('message');
         $zip_code  = $request->input('zipcode');
-        $become_retailer   = $request->input('becomeRetailer');
-        $roping_equipment  = $request->input('ropingEquipment');
-        $cattle_equipment  = $request->input('cattleEquipment');
-        $easy_now_products = $request->input('easyNowProducts');
+        $become_retailer   = ($request->input('becomeRetailer')) ? "yes" : "no";
+        $roping_equipment  = ($request->input('ropingEquipment')) ? "yes" : "no";
+        $cattle_equipment  = ($request->input('cattleEquipment')) ? "yes" : "no";
+        $easy_now_products = ($request->input('easyNowProducts')) ? "yes" : "no";
 
         $message_body = "Name: {$name}\nEmail: {$email}\nPhone: {$phone}\nZip Code: {$zip_code}\n\nInterested in becoming a retailer? {$become_retailer}\nInterested in roping equipment? {$roping_equipment}\nInterested in cattle equipment? {$cattle_equipment}\nInterested in easy now products? {$easy_now_products}\n\n{$message}";
 
-        Mail::raw($message_body, function($message) {
-            $message->subject('');
-            $message->from('no-reply@website_name.com', 'Website Name');
+        Mail::raw($message_body, function($message) use($email) {
+            $message->subject('Message from ChuteHelp Contact Form');
+            $message->from($email);
             $message->to('info@chutehelp.com');
         });
 
