@@ -30,6 +30,9 @@
 
         <!-- JS -->
         <!-- <script src="{{ asset('js/app.js') }}"></script> -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 
         <style>
         .fa-facebook {
@@ -82,12 +85,16 @@
         }
 </style>
 
+        <script type="text/javascript">
+
+        </script>
+
     </head>
     <body>
         <div class="background-image" style="background-image: url('{{ asset('img/bck-dark.jpg') }}')">
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark chute-nav">
                 <a href="/" class="navbar-brand"><i>CHUTE HELP</i></a>
-
+                
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -107,6 +114,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/contact">Contact</a>
                         </li>
+                        
                         <li><a href="https://www.facebook.com/ChuteHelp/" class="fa fa-facebook sm-link" align="center"></a></li>
                         <li><a href="https://www.instagram.com/chutehelpinc/" class="fa fa-instagram sm-link" align="center"></a></li>
                         <li><a href="https://www.youtube.com/user/TheChuteHelp" class="fa fa-youtube sm-link" align="center"></a></li>
@@ -265,7 +273,7 @@
                         <h2>Our Products</h2>
                         <p>{{ $page->data['ourProducts'] }}</p>
                     </div>
-                    <a class="btn btn-primary info-button" href="#">Store</a>
+                    <a class="btn btn-primary info-button" href="https://store.chutehelp.com">Store</a>
                 </div>
 
                 <div class="col-sm-12 col-lg-4">
