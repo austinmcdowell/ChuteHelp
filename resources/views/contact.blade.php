@@ -90,7 +90,7 @@
 
         <!-- LAUNCH VIDEO/IMAGE -->
         <div class="background-image" style="background-image: url('{{ asset('img/bck-dark.jpg') }}')">
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark chute-nav">
+            <nav class="navbar navbar-expand-sm navbar-dark bg-dark chute-nav">
                 <a href="/" class="navbar-brand"><i>CHUTE HELP</i></a>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
