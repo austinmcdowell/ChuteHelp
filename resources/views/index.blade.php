@@ -194,16 +194,15 @@
                             
                             <p class="card-text">{{ $page->data['productFeature1description'] }}</p>
                             
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-4 col-lg-4">
-                                <p class="product-category secondary-product-label">product</p>
+                            <div class="row">
+                                <div class="col-sm-4 col-lg-4">
+                                    <p class="product-category secondary-product-label">product</p>
+                                </div>
+                                <div class="col-sm-5 offset-sm-3">
+                                    <a href="{{ $page->data['productFeature1storePageUrl'] }}" class="btn btn-primary visit-store-button">Visit Store</a>
+                                </div>
                             </div>
-                            <div class="col-sm-4 col-lg-4 offset-lg-3">
-                                <a href="{{ $page->data['productFeature1storePageUrl'] }}" class="btn btn-primary visit-store-button">Visit Store</a>
-                            </div>
                         </div>
-                        
                     </div>
                 </div>
 
@@ -216,17 +215,16 @@
                             </div>
                             <p class="card-text">{{ $page->data['productFeature2description'] }}</p>
                             
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-4">
-                                <p class="product-category secondary-product-label">product</p>
-                            </div>
-                            <div class="col-lg-4 offset-lg-3">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <p class="product-category secondary-product-label">product</p>
+                                </div>
+                                <div class="col-sm-5 offset-sm-3">
 
-                                <a href="{{ $page->data['productFeature2storePageUrl'] }}" class="btn btn-primary visit-store-button">Visit Store</a>
+                                    <a href="{{ $page->data['productFeature2storePageUrl'] }}" class="btn btn-primary visit-store-button">Visit Store</a>
+                                </div>
                             </div>
                         </div>
-                        
                     </div>
                 </div>
 
@@ -239,17 +237,15 @@
                             </div>
                             <p class="card-text">{{ $page->data['productFeature3description'] }}</p>
                             
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-4">
-                                <p class="product-category secondary-product-label">product</p>
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <p class="product-category secondary-product-label">product</p>
+                                </div>
+                                <div class="col-lg-5 offset-lg-3">
+                                    <a href="{{ $page->data['productFeature3storePageUrl'] }}" class="btn btn-primary visit-store-button" align="center">Visit Store</a>
+                                </div>
                             </div>
-                            <div class="col-lg-4 offset-lg-3">
-                                <a href="{{ $page->data['productFeature3storePageUrl'] }}" class="btn btn-primary visit-store-button" align="center">Visit Store</a>
-                            </div>
                         </div>
-                        
-                        
                     </div>
                 </div>
                 
